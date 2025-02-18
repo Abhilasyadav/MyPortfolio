@@ -1,0 +1,34 @@
+[
+  {
+    "title": "Password Generator",
+    "imageSrc": "projects/passgen.png",
+    "description": "This is a project made to learn the latest languages by building an app.",
+    "skills": ["React"],
+    "demo": "https://abhilashpasswordgenerator.netlify.app/",
+    "source": "https://github.com/Abhilasyadav/passwordGenerator"
+  },
+  {
+    "title": "Currency Converter",
+    "imageSrc": "projects/currency.png",
+    "description": "This is a project made to learn the latest languages by building an app.",
+    "skills": ["React"],
+    "demo": "https://abhilashcurrencyconverter.netlify.app/",
+    "source": "https://github.com/Abhilasyadav/currencyConvertor"
+  },
+  {
+    "title": "To Do List",
+    "imageSrc": "projects/todo.png",
+    "description": "This is a project made to learn the latest languages by building an app.",
+    "skills": ["React"],
+    "demo": "https://abhilashtodolist.netlify.app/",
+    "source": "https://github.com/Abhilasyadav/TodoList"
+  },
+  {
+    "title": "Colour Switcher",
+    "imageSrc": "projects/color.png",
+    "description": "This is a project made to learn the latest languages by building an app.",
+    "skills": ["React"],
+    "demo": "https://bgcolorabhilash.netlify.app/",
+    "source": "https://github.com/Abhilasyadav/Bgcolor"
+  }
+]
