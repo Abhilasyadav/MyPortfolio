@@ -32,6 +32,14 @@
     "imageSrc": "skills/java.png"
   },
   {
+    "title": "Spring",
+    "imageSrc": "skills/spring.png"
+  },
+  {
+    "title": "Spring Boot",
+    "imageSrc": "skills/sb.png"
+  },
+  {
     "title": "Docker",
     "imageSrc": "skills/social.png"
   }
