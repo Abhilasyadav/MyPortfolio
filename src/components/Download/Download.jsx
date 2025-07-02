@@ -6,7 +6,7 @@ function Download() {
     const handleDownload = () => {
       const link = document.createElement('a');
       link.href = resumeURL;
-      link.download = 'Myresume_Abhilash_yadav.pdf';
+      link.download = 'Abhilash_Yadav_Resume.pdf';
       link.style.display = 'none';
       document.body.appendChild(link);
       link.click();
