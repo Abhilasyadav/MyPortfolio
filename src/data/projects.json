@@ -1,11 +1,11 @@
 [
   {
-    "title": "Password Generator",
-    "imageSrc": "projects/passgen.png",
+    "title": "Gaming Needs",
+    "imageSrc": "projects/gaming needs.png",
     "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React"],
-    "demo": "https://abhilashpasswordgenerator.netlify.app/",
-    "source": "https://github.com/Abhilasyadav/passwordGenerator"
+    "skills": ["React, Spring Boot, Spring Security, Spring MVC, Spring Data/Jpa, MYSQL"],
+    "demo": "https://gaming-needs.netlify.app/user",
+    "source": "https://github.com/Abhilasyadav/Gaming-Needs-be"
   },
   {
     "title": "Currency Converter",
@@ -30,5 +30,13 @@
     "skills": ["React"],
     "demo": "https://bgcolorabhilash.netlify.app/",
     "source": "https://github.com/Abhilasyadav/Bgcolor"
+  },
+   {
+    "title": "Password Generator",
+    "imageSrc": "projects/passgen.png",
+    "description": "This is a project made to learn the latest languages by building an app.",
+    "skills": ["React"],
+    "demo": "https://abhilashpasswordgenerator.netlify.app/",
+    "source": "https://github.com/Abhilasyadav/passwordGenerator"
   }
 ]
