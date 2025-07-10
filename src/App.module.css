@@ -1,8 +1,34 @@
 @import "./vars.css";
 
 .App {
-  background-color: var(--color-bg);
+  min-height: 100vh;
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  background: linear-gradient(135deg, var(--color-bg) 60%, var(--color-secondary) 100%);
+  overflow-x: hidden;
+  font-family: var(--font-roboto);
+  color: var(--color-text);
+  transition: background 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0;
+}
+
+/* Responsive section spacing */
+@media (max-width: 1200px) {
+  .App {
+    padding: 0 2vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .App {
+    padding: 0 1vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .App {
+    padding: 0;
+  }
 }

@@ -2,15 +2,15 @@
   {
     "title": "Gaming Needs",
     "imageSrc": "projects/gaming needs.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
-    "skills": ["React, Spring Boot, Spring Security, Spring MVC, Spring Data/Jpa, MYSQL"],
+    "description": "A full-stack gaming e-commerce platform with secure authentication, product management, and seamless user experience. Built using React and Spring Boot.",
+    "skills": ["Spring Boot, React, Spring Security, Spring MVC, Spring Data/Jpa, MYSQL"],
     "demo": "https://gaming-needs.netlify.app/user",
     "source": "https://github.com/Abhilasyadav/Gaming-Needs-be"
   },
   {
     "title": "Currency Converter",
     "imageSrc": "projects/currency.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
+    "description": "A real-time currency converter app with a clean UI, leveraging live exchange rates for accurate conversions. Built with React.",
     "skills": ["React"],
     "demo": "https://abhilashcurrencyconverter.netlify.app/",
     "source": "https://github.com/Abhilasyadav/currencyConvertor"
@@ -18,7 +18,7 @@
   {
     "title": "To Do List",
     "imageSrc": "projects/todo.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
+    "description": "A productivity-focused to-do list app with persistent storage and intuitive task management. Built with React.",
     "skills": ["React"],
     "demo": "https://abhilashtodolist.netlify.app/",
     "source": "https://github.com/Abhilasyadav/TodoList"
@@ -26,7 +26,7 @@
   {
     "title": "Colour Switcher",
     "imageSrc": "projects/color.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
+    "description": "A simple yet elegant color theme switcher for instant background changes. Built with React.",
     "skills": ["React"],
     "demo": "https://bgcolorabhilash.netlify.app/",
     "source": "https://github.com/Abhilasyadav/Bgcolor"
@@ -34,7 +34,7 @@
    {
     "title": "Password Generator",
     "imageSrc": "projects/passgen.png",
-    "description": "This is a project made to learn the latest languages by building an app.",
+    "description": "A secure password generator with customizable options for strength and length. Built with React.",
     "skills": ["React"],
     "demo": "https://abhilashpasswordgenerator.netlify.app/",
     "source": "https://github.com/Abhilasyadav/passwordGenerator"

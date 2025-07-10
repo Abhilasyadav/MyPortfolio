@@ -7,6 +7,18 @@ export const About = () => {
   return (
     <section className={styles.container} id="about">
       <h2 className={styles.title}>About</h2>
+      <p
+        style={{
+          color: "#bfc9e0",
+          fontSize: "1.15rem",
+          marginBottom: "32px",
+          maxWidth: "600px",
+        }}
+      >
+        I’m a dedicated developer with a passion for building robust, user-friendly
+        web applications. My expertise spans both frontend and backend, allowing
+        me to deliver seamless digital experiences.
+      </p>
       <div className={styles.content}>
         <img
           src={getImageUrl("about/laptopImg.png")}
@@ -19,8 +31,9 @@ export const About = () => {
             <div className={styles.aboutItemText}>
               <h3>Frontend Developer</h3>
               <p>
-                I'm a frontend developer with experience in building responsive
-                and optimized sites
+                I specialize in crafting modern, responsive, and accessible user
+                interfaces using React and the latest web technologies. My focus
+                is on delivering pixel-perfect, high-performance experiences.
               </p>
             </div>
           </li>
@@ -29,12 +42,23 @@ export const About = () => {
             <div className={styles.aboutItemText}>
               <h3>Backend Developer</h3>
               <p>
-                I have experience developing fast and optimised back-end systems
-                and APIs
+                I build scalable and efficient backend systems and RESTful APIs,
+                primarily with Java and Node.js, ensuring robust data management
+                and seamless integration with frontend applications.
               </p>
             </div>
           </li>
-          
+          <li className={styles.aboutItem}>
+            <img src={getImageUrl("about/rocketIcon.png")} alt="Rocket icon" />
+            <div className={styles.aboutItemText}>
+              <h3>Continuous Learner</h3>
+              <p>
+                I am committed to continuous learning and staying updated with the
+                latest trends in technology, always striving to improve my skills
+                and deliver innovative solutions.
+              </p>
+            </div>
+          </li>
         </ul>
       </div>
     </section>

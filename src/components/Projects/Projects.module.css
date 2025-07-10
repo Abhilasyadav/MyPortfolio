@@ -1,10 +1,22 @@
 @import "../../vars.css";
 
 .container {
-  margin-top: 76px;
-  color: var(--color-text);
-  margin-left: 10%;
-  margin-right: 10%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 4px;
+  }
 }
 
 .title {
@@ -12,15 +24,81 @@
   font-weight: 700;
   letter-spacing: 1.75px;
   text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .projects {
   margin-top: 37px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
+  flex-wrap: nowrap; /* Always keep in one row */
+  align-items: stretch;
+  gap: 20px;
   width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.projects > div {
+  flex: 0 0 340px; /* Fixed width for each card */
+  scroll-snap-align: start;
+  min-width: 300px;
+  max-width: 360px;
+}
+
+/* Hide scrollbar for a cleaner look */
+.projects::-webkit-scrollbar {
+  height: 8px;
+  background: transparent;
+}
+.projects::-webkit-scrollbar-thumb {
+  background: var(--color-secondary);
+  border-radius: 4px;
+}
+
+/* Remove wrapping on large screens */
+@media (min-width: 1100px) {
+  .projects {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scroll-snap-type: x mandatory;
+  }
+  .projects > div {
+    flex: 0 0 340px;
+    min-width: 300px;
+    max-width: 360px;
+  }
+}
+
+/* Fade-in animation for cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
