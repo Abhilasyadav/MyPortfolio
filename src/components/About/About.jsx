@@ -43,7 +43,7 @@ export const About = () => {
               <h3>Backend Developer</h3>
               <p>
                 I build scalable and efficient backend systems and RESTful APIs,
-                primarily with Java and Node.js, ensuring robust data management
+                primarily with Java, ensuring robust data management
                 and seamless integration with frontend applications.
               </p>
             </div>

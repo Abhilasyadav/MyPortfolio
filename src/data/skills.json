@@ -1,46 +1,160 @@
-[
-  {
-    "title": "HTML",
-    "imageSrc": "skills/html.png"
-  },
-  {
-    "title": "CSS",
-    "imageSrc": "skills/css.png"
-  },
-  {
-    "title": "JS",
-    "imageSrc": "skills/java-script.png"
-  },
-  {
-    "title": "React",
-    "imageSrc": "skills/react.png"
-  },
-  {
-    "title": "Redux",
-    "imageSrc": "skills/atom.png"
-  },
-  {
-    "title": "SQL",
-    "imageSrc": "skills/sql-server.png"
-  },
-  {
-    "title": "MongoDB",
-    "imageSrc": "skills/mongodb.png"
-  },
-  {
-    "title": "Java",
-    "imageSrc": "skills/java.png"
-  },
-  {
-    "title": "Spring",
-    "imageSrc": "skills/spring.png"
-  },
-  {
-    "title": "Spring Boot",
-    "imageSrc": "skills/sb.png"
-  },
-  {
-    "title": "Docker",
-    "imageSrc": "skills/social.png"
-  }
-]
+{
+  "skills": [
+    {
+      "id": 1,
+      "title": "Java",
+      "imageSrc": "/skills/java.png",
+      "category": "Programming",
+      "proficiency": 85
+    },
+    {
+      "id": 2,
+      "title": "JavaScript",
+      "imageSrc": "/skills/js.png",
+      "category": "Programming",
+      "proficiency": 90
+    },
+    {
+      "id": 3,
+      "title": "SQL",
+      "imageSrc": "/skills/sql.png",
+      "category": "Programming",
+      "proficiency": 80
+    },
+    {
+      "id": 4,
+      "title": "React.js",
+      "imageSrc": "/skills/react.png",
+      "category": "Frontend",
+      "proficiency": 90
+    },
+    {
+      "id": 5,
+      "title": "HTML5",
+      "imageSrc": "/skills/html.png",
+      "category": "Frontend",
+      "proficiency": 95
+    },
+    {
+      "id": 6,
+      "title": "CSS3",
+      "imageSrc": "/skills/css.png",
+      "category": "Frontend",
+      "proficiency": 90
+    },
+    {
+      "id": 8,
+      "title": "Spring Boot",
+      "imageSrc": "/skills/spring.png",
+      "category": "Backend",
+      "proficiency": 80
+    },
+    {
+      "id": 9,
+      "title": "Spring MVC",
+      "imageSrc": "/skills/spring.png",
+      "category": "Backend",
+      "proficiency": 80
+    },
+    {
+      "id": 10,
+      "title": "Hibernate",
+      "imageSrc": "/skills/hibernate.png",
+      "category": "Backend",
+      "proficiency": 75
+    },
+    {
+      "id": 11,
+      "title": "JPA",
+      "imageSrc": "/skills/jpa.png",
+      "category": "Backend",
+      "proficiency": 75
+    },
+    {
+      "id": 12,
+      "title": "JDBC",
+      "imageSrc": "/skills/jdbc.png",
+      "category": "Backend",
+      "proficiency": 70
+    },
+    {
+      "id": 13,
+      "title": "MySQL",
+      "imageSrc": "/skills/mysql.png",
+      "category": "Database",
+      "proficiency": 85
+    },
+    {
+      "id": 14,
+      "title": "NoSQL",
+      "imageSrc": "/skills/nosql.png",
+      "category": "Database",
+      "proficiency": 70
+    },
+    {
+      "id": 15,
+      "title": "Git",
+      "imageSrc": "/skills/git.png",
+      "category": "Tools",
+      "proficiency": 85
+    },
+    {
+      "id": 16,
+      "title": "GitHub",
+      "imageSrc": "/skills/github.png",
+      "category": "Tools",
+      "proficiency": 85
+    },
+    {
+      "id": 17,
+      "title": "VS Code",
+      "imageSrc": "/skills/vscode.png",
+      "category": "Tools",
+      "proficiency": 90
+    },
+    {
+      "id": 18,
+      "title": "Eclipse IDE",
+      "imageSrc": "/skills/eclipse.png",
+      "category": "Tools",
+      "proficiency": 80
+    },
+    {
+      "id": 19,
+      "title": "Postman",
+      "imageSrc": "/skills/postman.png",
+      "category": "Tools",
+      "proficiency": 85
+    },
+    {
+      "id": 20,
+      "title": "Docker",
+      "imageSrc": "/skills/docker.png",
+      "category": "Cloud",
+      "proficiency": 70
+    },
+    {
+      "id": 21,
+      "title": "Netlify",
+      "imageSrc": "/skills/netlify.png",
+      "category": "Cloud",
+      "proficiency": 85
+    },
+    {
+      "id": 22,
+      "title": "Railway",
+      "imageSrc": "/skills/railway.png",
+      "category": "Cloud",
+      "proficiency": 80
+    }
+  ],
+  "categories": [
+    "All",
+    "Programming",
+    "Frontend",
+    "Backend",
+    "Database",
+    "Tools",
+    "Cloud"
+  ]
+}
