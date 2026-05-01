@@ -1,0 +1,211 @@
+@import "../../vars.css";
+
+/* ── Overlay ───────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Modal ─────────────────────────────────── */
+.modal {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+  width: 100%;
+  max-width: 900px;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slideUp 0.3s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(32px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── Single unified teal header ────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  height: 56px;
+  background: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* Left — branding */
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: var(--font-roboto);
+  white-space: nowrap;
+}
+
+/* Center — page nav + zoom */
+.headerCenter {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.navBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+  line-height: 1;
+}
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.pageInfo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0 4px;
+}
+
+/* Override rpv page input */
+.pageInfo :global(.rpv-page-navigation__current-page-input) {
+  width: 36px !important;
+  height: 26px !important;
+  background: rgba(255,255,255,0.15) !important;
+  border: 1px solid rgba(255,255,255,0.3) !important;
+  border-radius: 5px !important;
+  color: #ffffff !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  padding: 0 4px !important;
+}
+
+.pageSep {
+  opacity: 0.7;
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background: rgba(255,255,255,0.25);
+  margin: 0 6px;
+}
+
+.zoomLabel {
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  min-width: 44px;
+  text-align: center;
+}
+
+/* Right — actions */
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 0 0 auto;
+}
+
+.downloadBtn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+}
+.downloadBtn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: translateY(-1px);
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: none;
+  font-size: 0.9rem;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.15s;
+  flex-shrink: 0;
+}
+.closeBtn:hover {
+  background: rgba(239, 68, 68, 0.7);
+  transform: scale(1.1);
+}
+
+/* ── PDF body ──────────────────────────────── */
+.body {
+  flex: 1;
+  overflow: auto;
+  background: #f4f7f5;
+  min-height: 60vh;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 640px) {
+  .overlay { padding: 8px; }
+  .modal   { border-radius: 14px; }
+  .header  { height: 48px; padding: 0 12px; gap: 8px; }
+  .title   { font-size: 0.9rem; }
+  .downloadBtn { display: none; }
+  .headerCenter { gap: 2px; }
+  .navBtn  { width: 26px; height: 26px; font-size: 1rem; }
+}

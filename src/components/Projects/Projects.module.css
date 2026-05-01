@@ -1,0 +1,58 @@
+@import "../../vars.css";
+
+.container {
+  width: 100%;
+  background: #f4f7f5;
+  padding: 80px 10%;
+}
+
+.title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--color-text);
+  text-align: center;
+  margin-bottom: 8px;
+  font-family: var(--font-roboto);
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: 2px;
+  margin: 10px auto 0;
+}
+
+.projects {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+/* Fade-in animation for cards */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fadeInUp {
+  animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+@media (max-width: 830px) {
+  .container { padding: 60px 5%; }
+  .title { font-size: 2rem; }
+}
+
+@media (max-width: 600px) {
+  .projects { grid-template-columns: 1fr; }
+  .container { padding: 50px 4%; }
+}

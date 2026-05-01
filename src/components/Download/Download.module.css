@@ -1,0 +1,30 @@
+@import "./../../vars.css";
+
+.downloadBtn {
+  text-decoration: none;
+  background: var(--color-dark);
+  color: #ffffff;
+  border-radius: 100px;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 13px 30px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.22s, transform 0.18s;
+  outline: none;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.downloadBtn:hover,
+.downloadBtn:focus {
+  background: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .downloadBtn {
+    font-size: 0.9rem;
+    padding: 11px 22px;
+  }
+}
