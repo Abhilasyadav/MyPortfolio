@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
 import styles from "./Hero.module.css";
 import { getImageUrl } from "../../utils";
 import View from "../ResumeView/View";
@@ -29,12 +28,12 @@ export const Hero = () => {
     <section className={styles.hero}>
       <div className={styles.inner}>
 
-        {/* ── Left column ── */}
+        {/* Left column */}
         <div className={styles.leftCol}>
           <p className={styles.greeting}>HELLO I AM</p>
           <h1 className={styles.name}>Abhilash Yadav</h1>
           <p className={styles.role}>
-            I'm a&nbsp;
+            I&apos;m a&nbsp;
             <span className={styles.typed}>{typedText}</span>
             <span className={styles.cursor}>|</span>
           </p>
@@ -45,7 +44,7 @@ export const Hero = () => {
           </p>
           <div className={styles.ctaRow}>
             <button className={styles.primaryBtn} onClick={handleDownload}>
-              ⬇&nbsp;&nbsp;Download CV
+              &#11015;&nbsp;&nbsp;Download CV
             </button>
             <button className={styles.ghostBtn} onClick={() => setOpenResume(true)}>
               <span className={styles.dot} />
@@ -54,7 +53,7 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* ── Right column: photo + floating stat card ── */}
+        {/* Right column: photo + floating stat card */}
         <div className={styles.rightCol}>
           <div className={styles.photoRing}>
             <img
@@ -63,7 +62,6 @@ export const Hero = () => {
               className={styles.photo}
             />
           </div>
-          {/* Stat card overlapping wave boundary */}
           <div className={styles.statCard}>
             <span className={styles.statNum}>5+</span>
             <span className={styles.statTxt}>Projects<br />Completed</span>
@@ -72,7 +70,7 @@ export const Hero = () => {
 
       </div>
 
-      {/* ── Wave: concave on left, low on right (matches reference) ── */}
+      {/* Wave */}
       <div className={styles.waveWrap}>
         <svg
           viewBox="0 0 1440 160"
@@ -86,44 +84,6 @@ export const Hero = () => {
         </svg>
       </div>
 
-=======
-
-import styles from "./Hero.module.css";
-import { getImageUrl } from "../../utils";
-import Download from "../Download/Download";
-import View from "../ResumeView/View";
-
-export const Hero = () => {
-  const [openResume, setOpenResume] = useState(false);
-
-  return (
-    <section className={styles.container}>
-      <div className={styles.content}>
-        <h1 className={styles.title}>Hi, I'm Abhilash</h1>
-        <p className={styles.description}>
-          I’m a passionate full-stack developer specializing in building modern,
-          scalable web applications with React and Java backends. I love crafting
-          seamless user experiences and solving real-world problems through code.
-        </p>
-        <div className={styles.buttonGroup}>
-          <Download />
-          <button
-            className={styles.viewBtn}
-            onClick={() => setOpenResume(true)}
-            type="button"
-          >
-            View Resume
-          </button>
-        </div>
-      </div>
-      <img
-        src={getImageUrl("hero/man.png")}
-        alt="Hero image of me"
-        className={styles.heroImg}
-      />
-      <div className={styles.topBlur} />
-      <div className={styles.bottomBlur} />
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
       <View open={openResume} onClose={() => setOpenResume(false)} />
     </section>
   );

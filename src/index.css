@@ -1,4 +1,4 @@
-* {
+﻿* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -8,11 +8,8 @@
 html {
   scroll-behavior: smooth;
 }
-<<<<<<< HEAD
 
 body {
   background: #f4f7f5;
   color: #1a1a2e;
 }
-=======
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3

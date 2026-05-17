@@ -1,14 +1,23 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from "react";
-=======
-import React, { useState } from "react";
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
+﻿import React, { useState, useEffect } from "react";
 
 import styles from "./Navbar.module.css";
-import { getImageUrl } from "../../utils";
 
-<<<<<<< HEAD
 const SECTIONS = ["about", "skills", "projects", "contact"];
+
+const IconMenu = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+    <line x1="3" y1="6" x2="21" y2="6"/>
+    <line x1="3" y1="12" x2="21" y2="12"/>
+    <line x1="3" y1="18" x2="21" y2="18"/>
+  </svg>
+);
+
+const IconClose = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+    <line x1="18" y1="6" x2="6" y2="18"/>
+    <line x1="6" y1="6" x2="18" y2="18"/>
+  </svg>
+);
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,32 +53,19 @@ export const Navbar = () => {
       <a className={styles.logo} href="/">
         <span className={styles.logoIcon}>A</span>
         <span className={styles.title}>Portfolio</span>
-=======
-export const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  return (
-    <nav className={styles.navbar}>
-      <a className={styles.title} href="/">
-        Portfolio
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
       </a>
       <div className={styles.menu}>
-        <img
+        <button
           className={styles.menuBtn}
-          src={
-            menuOpen
-              ? getImageUrl("nav/closeIcon.png")
-              : getImageUrl("nav/menuIcon.png")
-          }
-          alt="menu-button"
           onClick={() => setMenuOpen(!menuOpen)}
-        />
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+        >
+          {menuOpen ? <IconClose /> : <IconMenu />}
+        </button>
         <ul
           className={`${styles.menuItems} ${menuOpen ? styles.menuOpen : ""}`}
           onClick={() => setMenuOpen(false)}
         >
-<<<<<<< HEAD
           {SECTIONS.map((id) => (
             <li key={id}>
               <a
@@ -82,23 +78,8 @@ export const Navbar = () => {
           ))}
         </ul>
         <button className={styles.cvBtn} onClick={handleDownload}>
-          ⬇ Download CV
+          &#11015; Download CV
         </button>
-=======
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
       </div>
     </nav>
   );

@@ -1,5 +1,4 @@
-:root {
-<<<<<<< HEAD
+﻿:root {
   /* Primary teal color */
   --color-primary: #1d6b5a;
   --color-primary-light: #2a9070;
@@ -16,17 +15,6 @@
 
   /* Accent */
   --color-accent: #1d6b5a;
-=======
-  /* Colours */
-  --color-text: #f4f6fb;
-  --color-primary: #4f8cff;
-  --color-secondary: #232946;
-  --color-dark: #16161a;
-  --color-bg: #161b22;
-
-  /* Accent */
-  --color-accent: #ffb400;
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
 
   /* Fonts */
   --font-roboto: "Roboto", Arial, sans-serif;

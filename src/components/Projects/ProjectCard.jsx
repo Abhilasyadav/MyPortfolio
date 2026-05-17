@@ -23,7 +23,7 @@ export const ProjectCard = ({
       <p className={styles.description}>{description}</p>
       <ul className={styles.skills}>
         {skills[0]
-          .split(",")
+          ?.split(",")
           .map((skill, id) => (
             <li key={id} className={styles.skill}>
               {skill.trim()}

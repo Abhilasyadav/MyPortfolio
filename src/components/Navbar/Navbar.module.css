@@ -1,7 +1,6 @@
-@import "../../vars.css";
+﻿@import "../../vars.css";
 
 .navbar {
-<<<<<<< HEAD
   position: sticky;
   top: 0;
   z-index: 100;
@@ -44,31 +43,6 @@
   letter-spacing: 1px;
   font-family: var(--font-roboto);
   text-decoration: none;
-=======
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 38px;
-  z-index: 10;
-  margin: 0 10%;
-  transition: all 0.3s;
-}
-
-.title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  text-decoration: none;
-  color: var(--color-primary);
-  letter-spacing: 2px;
-  font-family: var(--font-roboto);
-  background: linear-gradient(90deg, var(--color-primary) 60%, var(--color-accent) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  transition: text-shadow 0.2s;
-  text-shadow: 0 2px 12px rgba(79, 140, 255, 0.13);
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
 }
 
 .menuBtn {
@@ -76,45 +50,31 @@
   background: transparent;
   border: none;
   outline: none;
-<<<<<<< HEAD
   cursor: pointer;
-  padding: 0;
-  transition: transform 0.18s;
+  padding: 6px;
+  border-radius: 8px;
+  color: var(--color-text);
+  transition: background 0.18s, transform 0.18s;
+  line-height: 0;
+}
+
+.menuBtn:hover {
+  background: rgba(29, 107, 90, 0.08);
 }
 
 .menuBtn:active {
-  transform: scale(1.15);
-=======
-  transition: transform 0.18s cubic-bezier(0.23, 1, 0.32, 1);
-  padding: 0;
-}
-
-.menuBtn:active,
-.menuBtn:focus {
-  transform: scale(1.15) rotate(10deg);
-  outline: none;
-  background: transparent;
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
+  transform: scale(0.92);
 }
 
 .menu {
   display: flex;
   align-items: center;
-<<<<<<< HEAD
   gap: 40px;
-=======
-  position: relative;
-  margin-left: 40px; /* Add this line for gap */
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
 }
 
 .menuItems {
   display: flex;
-<<<<<<< HEAD
   gap: 32px;
-=======
-  gap: 40px;
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
   list-style: none;
   align-items: center;
   margin: 0;
@@ -122,7 +82,6 @@
 }
 
 .menuItems a {
-<<<<<<< HEAD
   font-size: 1rem;
   color: var(--color-text-muted);
   text-decoration: none;
@@ -131,33 +90,12 @@
   padding: 4px 0;
   position: relative;
   transition: color 0.2s;
-=======
-  font-size: 1.13rem;
-  color: var(--color-primary);
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 1px;
-  padding: 6px 0;
-  border-radius: 0;
-  background: none;
-  border: none;
-  transition:
-    color 0.22s cubic-bezier(0.23, 1, 0.32, 1),
-    box-shadow 0.22s cubic-bezier(0.23, 1, 0.32, 1),
-    transform 0.18s cubic-bezier(0.23, 1, 0.32, 1);
-  position: relative;
-  z-index: 1;
-  box-shadow: none;
-  margin: 0 8px;
-  display: inline-block;
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
 }
 
 .menuItems a::after {
   content: "";
   display: block;
   width: 0;
-<<<<<<< HEAD
   height: 2px;
   background: var(--color-primary);
   border-radius: 2px;
@@ -209,92 +147,27 @@
     height: auto;
     padding-top: 14px;
     padding-bottom: 14px;
-=======
-  height: 2.5px;
-  background: linear-gradient(90deg, var(--color-primary) 60%, var(--color-accent) 100%);
-  border-radius: 2px;
-  transition: width 0.22s cubic-bezier(0.23, 1, 0.32, 1);
-  margin-top: 3px;
-}
-
-.menuItems a:hover,
-.menuItems a:focus {
-  color: var(--color-accent);
-  background: none;
-  transform: translateY(-2px) scale(1.04);
-  outline: none;
-}
-
-.menuItems a:hover::after,
-.menuItems a:focus::after {
-  width: 100%;
-}
-
-@media screen and (max-width: 830px) {
-  .navbar {
-    flex-direction: row;
-    align-items: center;
-    margin: 0;
-    padding-top: 24px;
-    justify-content: space-between;
-  }
-
-  .title {
-    font-size: 1.6rem;
-    margin-bottom: 0;
-    text-align: center;
-    align-self: center;
-    width: auto;
-    display: block;
-    letter-spacing: 1.5px;
-    /* Add right margin for gap */
-    margin-right: 18px;
-  }
-
-  .menu {
-    flex-direction: row;
-    align-items: center;
-    width: auto;
-    justify-content: flex-end;
-    position: static;
-    margin-left: 18px; /* Smaller gap on mobile */
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
   }
 
   .menuBtn {
-    display: block;
-<<<<<<< HEAD
-    width: 34px;
-    height: 34px;
-    filter: brightness(0) saturate(100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .menu {
     gap: 16px;
     width: auto;
     position: relative;
-=======
-    cursor: pointer;
-    width: 38px;
-    height: 38px;
-    margin-left: 0;
-    margin-bottom: 0;
-    z-index: 20;
-    background: none;
-    border: none;
-    padding: 0;
-    transition: transform 0.18s cubic-bezier(0.23, 1, 0.32, 1);
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
   }
 
   .menuItems {
     display: none;
     flex-direction: column;
-<<<<<<< HEAD
     align-items: flex-start;
     gap: 12px;
     position: absolute;
-    top: 48px;
+    top: 52px;
     right: 0;
     background: #ffffff;
     border-radius: 14px;
@@ -303,45 +176,40 @@
     min-width: 180px;
     z-index: 20;
     animation: slideDown 0.25s ease;
-=======
-    align-items: center;
-    gap: 13px;
-    border-radius: 14px;
-    background: linear-gradient(
-      0deg,
-      rgba(25, 55, 109, 0.2) 0%,
-      rgba(25, 55, 109, 1) 100%
-    );
-    padding: 24px 33px;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
-    margin-top: 16px;
-    position: absolute;
-    top: 44px;
-    right: 0;
-    min-width: 180px;
-    z-index: 15;
-    animation: fadeInMenu 0.3s;
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
   }
 
   .menuOpen {
     display: flex;
   }
-<<<<<<< HEAD
 
   .cvBtn {
     display: none;
   }
 }
 
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 12px 4%;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .logoIcon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+
+  .menuItems {
+    right: -4px;
+    min-width: 160px;
+    padding: 16px 20px;
+  }
+}
+
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-8px); }
   to   { opacity: 1; transform: translateY(0); }
-=======
-}
-
-@keyframes fadeInMenu {
-  from { opacity: 0; transform: translateY(-10px);}
-  to { opacity: 1; transform: translateY(0);}
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
 }

@@ -1,37 +1,25 @@
-@import "../../vars.css";
+﻿@import "../../vars.css";
 
-<<<<<<< HEAD
-/* ── Overlay ───────────────────────────────── */
+/* â”€â”€ Overlay â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .overlay {
   position: fixed;
   inset: 0;
   background: rgba(17, 24, 39, 0.75);
   backdrop-filter: blur(4px);
-=======
-.overlay {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(22, 27, 34, 0.85);
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-<<<<<<< HEAD
   padding: 20px;
   animation: fadeIn 0.25s ease both;
-=======
-  animation: fadeIn 0.3s;
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
 }
 
 @keyframes fadeIn {
   from { opacity: 0; }
-<<<<<<< HEAD
   to   { opacity: 1; }
 }
 
-/* ── Modal ─────────────────────────────────── */
+/* â”€â”€ Modal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .modal {
   background: #ffffff;
   border-radius: 20px;
@@ -50,7 +38,7 @@
   to   { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* ── Single unified teal header ────────────── */
+/* â”€â”€ Single unified teal header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .header {
   display: flex;
   align-items: center;
@@ -61,7 +49,7 @@
   flex-shrink: 0;
 }
 
-/* Left — branding */
+/* Left â€” branding */
 .headerLeft {
   display: flex;
   align-items: center;
@@ -85,7 +73,7 @@
   white-space: nowrap;
 }
 
-/* Center — page nav + zoom */
+/* Center â€” page nav + zoom */
 .headerCenter {
   flex: 1;
   display: flex;
@@ -101,14 +89,13 @@
   background: rgba(255, 255, 255, 0.12);
   border: none;
   color: #ffffff;
-  font-size: 1.2rem;
-  font-weight: 700;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background 0.15s;
-  line-height: 1;
+  padding: 0;
+  flex-shrink: 0;
 }
 .navBtn:hover {
   background: rgba(255, 255, 255, 0.25);
@@ -157,7 +144,7 @@
   text-align: center;
 }
 
-/* Right — actions */
+/* Right â€” actions */
 .headerRight {
   display: flex;
   align-items: center;
@@ -189,7 +176,6 @@
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.12);
   border: none;
-  font-size: 0.9rem;
   color: #ffffff;
   cursor: pointer;
   display: flex;
@@ -197,13 +183,14 @@
   justify-content: center;
   transition: background 0.2s, transform 0.15s;
   flex-shrink: 0;
+  padding: 0;
 }
 .closeBtn:hover {
   background: rgba(239, 68, 68, 0.7);
   transform: scale(1.1);
 }
 
-/* ── PDF body ──────────────────────────────── */
+/* â”€â”€ PDF body â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .body {
   flex: 1;
   overflow: auto;
@@ -211,99 +198,24 @@
   min-height: 60vh;
 }
 
-/* ── Responsive ────────────────────────────── */
+/* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 640px) {
-  .overlay { padding: 8px; }
-  .modal   { border-radius: 14px; }
-  .header  { height: 48px; padding: 0 12px; gap: 8px; }
-  .title   { font-size: 0.9rem; }
+  .overlay    { padding: 8px; }
+  .modal      { border-radius: 14px; }
+  .header     { height: 48px; padding: 0 12px; gap: 8px; }
+  .title      { font-size: 0.9rem; }
   .downloadBtn { display: none; }
   .headerCenter { gap: 2px; }
-  .navBtn  { width: 26px; height: 26px; font-size: 1rem; }
-}
-=======
-  to { opacity: 1; }
+  .navBtn     { width: 26px; height: 26px; font-size: 1rem; }
 }
 
-.modal {
-  background: rgba(35, 41, 70, 0.98);
-  border-radius: 18px;
-  box-shadow: 0 8px 32px 0 rgba(4, 21, 45, 0.25);
-  padding: 32px 24px 24px 24px;
-  max-width: 800px;
-  width: 95vw;
-  max-height: 90vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: popupIn 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+@media (max-width: 480px) {
+  .overlay  { padding: 4px; }
+  .modal    { border-radius: 10px; max-height: 96vh; }
+  .header   { height: 44px; padding: 0 10px; gap: 6px; }
+  .title    { display: none; }
+  .dot      { display: none; }
+  .zoomLabel { min-width: 36px; font-size: 0.75rem; }
+  .navBtn   { width: 24px; height: 24px; font-size: 0.9rem; }
+  .closeBtn { width: 28px; height: 28px; font-size: 0.8rem; }
 }
-
-@keyframes popupIn {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.98);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.closeBtn {
-  position: absolute;
-  top: 18px;
-  right: 22px;
-  background: none;
-  border: none;
-  font-size: 2.2rem;
-  color: var(--color-primary);
-  cursor: pointer;
-  transition: color 0.2s, transform 0.2s;
-  z-index: 2;
-}
-.closeBtn:hover,
-.closeBtn:focus {
-  color: var(--color-accent);
-  transform: scale(1.2);
-}
-
-.title {
-  color: var(--color-primary);
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 18px;
-  letter-spacing: 1.2px;
-  text-align: center;
-}
-
-.resumeContainer {
-  width: 100%;
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.resumeFrame {
-  width: 100%;
-  height: 65vh;
-  border-radius: 10px;
-  box-shadow: 0 4px 24px 0 rgba(79, 140, 255, 0.13);
-  background: #fff;
-}
-
-@media (max-width: 600px) {
-  .modal {
-    padding: 12px 4px 8px 4px;
-    max-width: 98vw;
-  }
-  .resumeFrame {
-    height: 48vh;
-  }
-  .title {
-    font-size: 1.2rem;
-  }
-}
->>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
