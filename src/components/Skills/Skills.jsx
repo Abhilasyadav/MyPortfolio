@@ -51,6 +51,7 @@ export default function Skills(){
     return iconMap[skillTitle] || '💻';
   };
 
+<<<<<<< HEAD
   const getProficiencyLevel = (proficiency) => {
     if (proficiency >= 85) return { label: 'Expert', color: '#4f8cff' };
     if (proficiency >= 65) return { label: 'Proficient', color: '#ffb400' };
@@ -88,6 +89,40 @@ export default function Skills(){
       </div>
     );
   };
+=======
+  const SkillCard = ({ skill, index, isVisible }) => (
+    <div 
+      className={`${styles.skillCard} ${isVisible ? styles.visible : ''}`}
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <div className={styles.skillImageContainer}>
+        <div className={styles.skillImageBg}>
+          <div className={styles.skillIcon}>
+            <span className={styles.skillEmoji}>
+              {getSkillIcon(skill.title)}
+            </span>
+          </div>
+        </div>
+        <div className={styles.skillGlow}></div>
+      </div>
+      
+      <div className={styles.skillContent}>
+        <h3 className={styles.skillTitle}>{skill.title}</h3>
+        <span className={styles.skillCategory}>{skill.category}</span>
+        
+        <div className={styles.skillProgress}>
+          <div className={styles.progressBar}>
+            <div 
+              className={styles.progressFill}
+              style={{ width: isVisible ? `${skill.proficiency}%` : '0%' }}
+            ></div>
+          </div>
+          <span className={styles.progressText}>{skill.proficiency}%</span>
+        </div>
+      </div>
+    </div>
+  );
+>>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
 
   return (
     <section className={styles.skillsSection} id="skills">

@@ -1,6 +1,7 @@
 @import "../../vars.css";
 
 .container {
+<<<<<<< HEAD
   color: #ffffff;
   width: 100%;
   background: var(--color-primary);
@@ -38,6 +39,29 @@
   font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.5px;
+=======
+  color: var(--color-text);
+  margin-top: 120px;
+  background-color: var(--color-secondary);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100vw;
+  padding: 58px 10%;
+  gap: 10px;
+}
+
+.text h2 {
+  font-size: 60px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.text p {
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 2px;
+>>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
 }
 
 .links {
@@ -45,14 +69,19 @@
   flex-direction: column;
   align-items: flex-start;
   list-style: none;
+<<<<<<< HEAD
   gap: 14px;
   padding: 0;
   margin: 0;
+=======
+  gap: 26px;
+>>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
 }
 
 .link {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   gap: 14px;
 }
 
@@ -192,5 +221,41 @@
   .submitBtn {
     align-self: stretch;
     text-align: center;
+=======
+  gap: 25px;
+}
+
+.link a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+}
+
+.text a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+}
+
+
+@media screen and (max-width: 830px) {
+  .container {
+    flex-direction: column;
+    gap: 23px;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links {
+    align-items: center;
+>>>>>>> 92bf37afb5efcafa2f1782d1754b4a6a377eadd3
   }
 }
