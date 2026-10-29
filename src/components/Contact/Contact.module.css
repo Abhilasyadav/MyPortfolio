@@ -1,43 +1,53 @@
 ﻿@import "../../vars.css";
 
 .container {
-  color: #ffffff;
+  color: var(--text);
   width: 100%;
-  background: var(--color-primary);
+  background: linear-gradient(160deg, #030d0e 0%, #041414 50%, #051a0e 100%);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;
-  padding: 70px 10%;
-  gap: 48px;
+  padding: 72px var(--gutter);
+  gap: 56px;
   position: relative;
-  margin-top: 0;
+  border-top: 1px solid var(--border);
 }
 
-/* â”€â”€ Left column â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+/* ── Left column ── */
 .left {
   display: flex;
   flex-direction: column;
   gap: 22px;
   flex: 1;
-  min-width: 240px;
+  min-width: 260px;
+  max-width: 360px;
 }
 
 .text h2 {
-  font-size: 3rem;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 1.4rem + 2vw, 3rem);
   font-weight: 800;
-  letter-spacing: 2px;
-  color: #ffffff;
-  margin-bottom: 4px;
-  font-family: var(--font-roboto);
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: -0.025em;
 }
 
 .text p {
   font-size: 1rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  letter-spacing: 0.2px;
 }
 
 .links {
@@ -45,7 +55,7 @@
   flex-direction: column;
   align-items: flex-start;
   list-style: none;
-  gap: 14px;
+  gap: 16px;
   padding: 0;
   margin: 0;
 }
@@ -53,34 +63,37 @@
 .link {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
 }
 
 .link svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--accent);
 }
 
 .link a {
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--text-muted);
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   transition: color 0.2s;
 }
 
 .link a:hover {
-  color: #7fffd4;
+  color: var(--accent-hover);
 }
 
 .location {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.875rem;
+  color: var(--text-subtle);
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-/* â”€â”€ Contact form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Contact form ── */
 .form {
   display: flex;
   flex-direction: column;
@@ -91,55 +104,57 @@
 }
 
 .formTitle {
-  font-size: 1.3rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 4px;
-  letter-spacing: 0.5px;
+  color: var(--text);
+  margin-bottom: 2px;
 }
 
 .input,
 .textarea {
-  background: rgba(255, 255, 255, 0.12);
-  border: 1.5px solid rgba(255, 255, 255, 0.25);
-  border-radius: 12px;
+  background: rgba(20, 184, 166, 0.05);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
   padding: 13px 18px;
-  color: #ffffff;
+  color: var(--text);
   font-size: 0.95rem;
-  font-family: "Outfit", sans-serif;
+  font-family: var(--font-body);
   outline: none;
-  transition: border-color 0.2s, background 0.2s;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
   resize: vertical;
 }
 
 .input:focus,
 .textarea:focus {
-  border-color: #7fffd4;
-  background: rgba(255, 255, 255, 0.16);
+  border-color: var(--accent);
+  background: rgba(20, 184, 166, 0.09);
+  box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
 .input::placeholder,
 .textarea::placeholder {
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-subtle);
 }
 
 .submitBtn {
-  background: var(--color-dark);
-  color: #ffffff;
+  background: var(--accent);
+  color: var(--on-accent);
   border: none;
-  border-radius: 100px;
+  border-radius: 999px;
   padding: 13px 32px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s, transform 0.18s;
+  transition: background 0.2s, transform 0.18s, box-shadow 0.2s;
   align-self: flex-start;
-  letter-spacing: 0.5px;
+  box-shadow: 0 8px 24px -8px var(--accent-glow);
 }
 
 .submitBtn:hover:not(:disabled) {
-  background: #1a1a2e;
+  background: var(--accent-hover);
   transform: translateY(-2px);
+  box-shadow: 0 12px 32px -8px var(--accent-glow);
 }
 
 .submitBtn:disabled {
@@ -148,7 +163,7 @@
 }
 
 .successMsg {
-  color: #7fffd4;
+  color: var(--accent-hover);
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -159,30 +174,36 @@
   font-weight: 600;
 }
 
-/* â”€â”€ Copyright bar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Copyright */
 .copyright {
   width: 100%;
   text-align: center;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-subtle);
   font-size: 0.85rem;
   padding-top: 28px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-top: 1px solid var(--border);
   margin-top: 8px;
   letter-spacing: 0.4px;
 }
 
-/* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-@media screen and (max-width: 830px) {
+/* Responsive */
+@media (max-width: 860px) {
   .container {
     flex-direction: column;
     gap: 32px;
-    padding: 56px 6%;
+    padding: 56px var(--gutter);
     align-items: center;
   }
 
-  .left { align-items: center; text-align: center; }
-  .links { align-items: center; }
-  .text h2 { font-size: 2.2rem; }
+  .left {
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .links {
+    align-items: center;
+  }
 
   .form {
     width: 100%;
@@ -193,18 +214,24 @@
     align-self: stretch;
     text-align: center;
   }
+
+  .text h2 {
+    font-size: 2.2rem;
+  }
 }
 
-@media screen and (max-width: 480px) {
-  .container { padding: 48px 5%; gap: 28px; }
-  .text h2   { font-size: 1.8rem; }
-  .text p    { font-size: 0.9rem; }
-  .link a    { font-size: 0.88rem; word-break: break-all; }
-  .link svg  { width: 18px; height: 18px; }
-  .location  { font-size: 0.82rem; }
-}
+@media (max-width: 480px) {
+  .container {
+    padding: 48px var(--gutter);
+    gap: 28px;
+  }
 
-@media screen and (max-width: 375px) {
-  .container { padding: 40px 4%; }
-  .text h2   { font-size: 1.6rem; }
+  .text h2 {
+    font-size: 1.9rem;
+  }
+
+  .link a {
+    font-size: 0.85rem;
+    word-break: break-all;
+  }
 }

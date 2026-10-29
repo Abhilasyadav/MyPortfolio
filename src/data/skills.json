@@ -1,26 +1,252 @@
 {
   "skills": [
-    { "id": 1,  "title": "Java",        "imageSrc": "/assets/skills/java.png",        "category": "Programming", "proficiency": 85 },
-    { "id": 2,  "title": "JavaScript",  "imageSrc": "/assets/skills/java-script.png", "category": "Programming", "proficiency": 90 },
-    { "id": 3,  "title": "SQL",         "imageSrc": "/assets/skills/sql-server.png",  "category": "Programming", "proficiency": 80 },
-    { "id": 4,  "title": "React.js",    "imageSrc": "/assets/skills/react.png",       "category": "Frontend",    "proficiency": 90 },
-    { "id": 5,  "title": "HTML5",       "imageSrc": "/assets/skills/html.png",        "category": "Frontend",    "proficiency": 95 },
-    { "id": 6,  "title": "CSS3",        "imageSrc": "/assets/skills/css.png",         "category": "Frontend",    "proficiency": 90 },
-    { "id": 8,  "title": "Spring Boot", "imageSrc": "/assets/skills/sb.png",          "category": "Backend",     "proficiency": 80 },
-    { "id": 9,  "title": "Spring MVC",  "imageSrc": "/assets/skills/spring.png",      "category": "Backend",     "proficiency": 80 },
-    { "id": 10, "title": "Hibernate",   "imageSrc": "",                               "category": "Backend",     "proficiency": 75 },
-    { "id": 11, "title": "JPA",         "imageSrc": "",                               "category": "Backend",     "proficiency": 75 },
-    { "id": 12, "title": "JDBC",        "imageSrc": "",                               "category": "Backend",     "proficiency": 70 },
-    { "id": 13, "title": "MySQL",       "imageSrc": "/assets/skills/sql-server.png",  "category": "Database",    "proficiency": 85 },
-    { "id": 14, "title": "NoSQL",       "imageSrc": "/assets/skills/mongodb.png",     "category": "Database",    "proficiency": 70 },
-    { "id": 15, "title": "Git",         "imageSrc": "",                               "category": "Tools",       "proficiency": 85 },
-    { "id": 16, "title": "GitHub",      "imageSrc": "/assets/skills/social.png",      "category": "Tools",       "proficiency": 85 },
-    { "id": 17, "title": "VS Code",     "imageSrc": "",                               "category": "Tools",       "proficiency": 90 },
-    { "id": 18, "title": "Eclipse IDE", "imageSrc": "",                               "category": "Tools",       "proficiency": 80 },
-    { "id": 19, "title": "Postman",     "imageSrc": "",                               "category": "Tools",       "proficiency": 85 },
-    { "id": 20, "title": "Docker",      "imageSrc": "",                               "category": "Cloud",       "proficiency": 70 },
-    { "id": 21, "title": "Netlify",     "imageSrc": "",                               "category": "Cloud",       "proficiency": 85 },
-    { "id": 22, "title": "Railway",     "imageSrc": "",                               "category": "Cloud",       "proficiency": 80 }
+    {
+      "id": 1,
+      "title": "Python",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      "category": "Languages",
+      "proficiency": 95
+    },
+    {
+      "id": 2,
+      "title": "JavaScript",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      "category": "Languages",
+      "proficiency": 90
+    },
+    {
+      "id": 3,
+      "title": "TypeScript",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      "category": "Languages",
+      "proficiency": 85
+    },
+    {
+      "id": 4,
+      "title": "React.js",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "category": "Frontend",
+      "proficiency": 90
+    },
+    {
+      "id": 5,
+      "title": "Django",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+      "category": "Backend",
+      "proficiency": 90
+    },
+    {
+      "id": 6,
+      "title": "FastAPI",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+      "category": "Backend",
+      "proficiency": 92
+    },
+    {
+      "id": 7,
+      "title": "Node.js",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      "category": "Backend",
+      "proficiency": 85
+    },
+    {
+      "id": 8,
+      "title": "Express.js",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+      "category": "Backend",
+      "proficiency": 85
+    },
+    {
+      "id": 9,
+      "title": "REST APIs",
+      "imageSrc": "",
+      "category": "Backend",
+      "proficiency": 95
+    },
+    {
+      "id": 10,
+      "title": "WebSockets",
+      "imageSrc": "",
+      "category": "Backend",
+      "proficiency": 82
+    },
+    {
+      "id": 11,
+      "title": "MongoDB",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      "category": "Database",
+      "proficiency": 88
+    },
+    {
+      "id": 12,
+      "title": "SQL",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      "category": "Database",
+      "proficiency": 85
+    },
+    {
+      "id": 13,
+      "title": "VectorDB",
+      "imageSrc": "",
+      "category": "Database",
+      "proficiency": 80
+    },
+    {
+      "id": 14,
+      "title": "LangChain",
+      "imageSrc": "",
+      "category": "AI / LLM",
+      "proficiency": 92
+    },
+    {
+      "id": 15,
+      "title": "LangGraph",
+      "imageSrc": "",
+      "category": "AI / LLM",
+      "proficiency": 90
+    },
+    {
+      "id": 16,
+      "title": "LangSmith",
+      "imageSrc": "",
+      "category": "AI / LLM",
+      "proficiency": 85
+    },
+    {
+      "id": 17,
+      "title": "RAG System",
+      "imageSrc": "",
+      "category": "AI / LLM",
+      "proficiency": 90
+    },
+    {
+      "id": 18,
+      "title": "Fine Tuning",
+      "imageSrc": "",
+      "category": "AI / LLM",
+      "proficiency": 80
+    },
+    {
+      "id": 19,
+      "title": "Guardrails",
+      "imageSrc": "",
+      "category": "AI / LLM",
+      "proficiency": 82
+    },
+    {
+      "id": 20,
+      "title": "Agent Orch.",
+      "imageSrc": "",
+      "category": "AI / LLM",
+      "proficiency": 92
+    },
+    {
+      "id": 21,
+      "title": "Ctx Engineering",
+      "imageSrc": "",
+      "category": "AI / LLM",
+      "proficiency": 88
+    },
+    {
+      "id": 22,
+      "title": "Prompt Caching",
+      "imageSrc": "",
+      "category": "AI / LLM",
+      "proficiency": 85
+    },
+    {
+      "id": 23,
+      "title": "Voice Bot",
+      "imageSrc": "",
+      "category": "AI / LLM",
+      "proficiency": 88
+    },
+    {
+      "id": 24,
+      "title": "Chat Bot",
+      "imageSrc": "",
+      "category": "AI / LLM",
+      "proficiency": 90
+    },
+    {
+      "id": 25,
+      "title": "AWS Bedrock",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+      "category": "Cloud / AWS",
+      "proficiency": 88
+    },
+    {
+      "id": 26,
+      "title": "AWS Lambda",
+      "imageSrc": "",
+      "category": "Cloud / AWS",
+      "proficiency": 85
+    },
+    {
+      "id": 27,
+      "title": "AWS EC2",
+      "imageSrc": "",
+      "category": "Cloud / AWS",
+      "proficiency": 82
+    },
+    {
+      "id": 28,
+      "title": "AWS Lex",
+      "imageSrc": "",
+      "category": "Cloud / AWS",
+      "proficiency": 80
+    },
+    {
+      "id": 29,
+      "title": "CloudWatch",
+      "imageSrc": "",
+      "category": "Cloud / AWS",
+      "proficiency": 78
+    },
+    {
+      "id": 30,
+      "title": "Lightsail",
+      "imageSrc": "",
+      "category": "Cloud / AWS",
+      "proficiency": 78
+    },
+    {
+      "id": 31,
+      "title": "Docker",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+      "category": "DevOps",
+      "proficiency": 85
+    },
+    {
+      "id": 32,
+      "title": "Git",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      "category": "DevOps",
+      "proficiency": 92
+    },
+    {
+      "id": 33,
+      "title": "GitHub",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      "category": "DevOps",
+      "proficiency": 92
+    },
+    {
+      "id": 34,
+      "title": "GitLab",
+      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg",
+      "category": "DevOps",
+      "proficiency": 85
+    }
   ],
-  "categories": ["All", "Programming", "Frontend", "Backend", "Database", "Tools", "Cloud"]
+  "categories": [
+    "All",
+    "Languages",
+    "Frontend",
+    "Backend",
+    "Database",
+    "AI / LLM",
+    "Cloud / AWS",
+    "DevOps"
+  ]
 }

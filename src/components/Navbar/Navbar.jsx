@@ -1,86 +1,126 @@
-﻿import React, { useState, useEffect } from "react";
+﻿import React, { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
+import { PROFILE } from "../../data/profile";
+import { useTheme } from "../../hooks/useTheme";
+import { IconClose, IconDownload, IconMenu, IconMoon, IconSun } from "../Icons";
 
-const SECTIONS = ["about", "skills", "projects", "contact"];
-
-const IconMenu = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-    <line x1="3" y1="6" x2="21" y2="6"/>
-    <line x1="3" y1="12" x2="21" y2="12"/>
-    <line x1="3" y1="18" x2="21" y2="18"/>
-  </svg>
-);
-
-const IconClose = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
-    <line x1="18" y1="6" x2="6" y2="18"/>
-    <line x1="6" y1="6" x2="18" y2="18"/>
-  </svg>
-);
+const LINKS = [
+  { to: "/", label: "Home", end: true },
+  { to: "/#about", label: "About", end: false },
+  { to: "/skills", label: "Skills", end: true },
+  { to: "/projects", label: "Projects", end: true },
+  { to: "/#contact", label: "Contact", end: false },
+];
 
 export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [scrolled, setScrolled] = useState(false);
+  const [theme, toggleTheme] = useTheme();
+  const location = useLocation();
 
   useEffect(() => {
-    const observers = SECTIONS.map((id) => {
-      const el = document.getElementById(id);
-      if (!el) return null;
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(id);
-        },
-        { threshold: 0.35 }
-      );
-      obs.observe(el);
-      return obs;
-    });
-    return () => observers.forEach((obs) => obs?.disconnect());
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/resume.pdf";
-    link.download = "Abhilash_Yadav_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  useEffect(() => {
+    setMenuOpen(false);
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKey = (e) => e.key === "Escape" && setMenuOpen(false);
+    const onResize = () => window.innerWidth > 860 && setMenuOpen(false);
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("resize", onResize);
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("resize", onResize);
+    };
+  }, [menuOpen]);
+
+  const isLight = theme === "light";
+
+  const getLinkClass = ({ isActive }) =>
+    isActive ? `${styles.navLink} ${styles.active}` : styles.navLink;
 
   return (
-    <nav className={styles.navbar}>
-      <a className={styles.logo} href="/">
-        <span className={styles.logoIcon}>A</span>
-        <span className={styles.title}>Portfolio</span>
-      </a>
-      <div className={styles.menu}>
-        <button
-          className={styles.menuBtn}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
-        >
-          {menuOpen ? <IconClose /> : <IconMenu />}
-        </button>
-        <ul
-          className={`${styles.menuItems} ${menuOpen ? styles.menuOpen : ""}`}
-          onClick={() => setMenuOpen(false)}
-        >
-          {SECTIONS.map((id) => (
-            <li key={id}>
-              <a
-                href={`#${id}`}
-                className={activeSection === id ? styles.activeLink : ""}
-              >
-                {id.charAt(0).toUpperCase() + id.slice(1)}
-              </a>
+    <header className={`${styles.header} ${scrolled || menuOpen ? styles.scrolled : ""}`}>
+      <nav className={styles.nav} aria-label="Main">
+        <NavLink className={styles.logo} to="/" onClick={() => setMenuOpen(false)}>
+          <span className={styles.logoMark}>AY</span>
+          <span className={styles.logoText}>{PROFILE.name}</span>
+        </NavLink>
+
+        <ul id="nav-menu" className={`${styles.links} ${menuOpen ? styles.open : ""}`}>
+          {LINKS.map(({ to, label, end }) => (
+            <li key={to}>
+              {to.includes("#") ? (
+                /* Hash links use plain <a> since they're anchor scrolls */
+                <a
+                  href={to}
+                  className={styles.navLink}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {label}
+                </a>
+              ) : (
+                <NavLink
+                  to={to}
+                  end={end}
+                  className={getLinkClass}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {label}
+                </NavLink>
+              )}
             </li>
           ))}
+          <li className={styles.mobileCta}>
+            <a
+              className="btn btn-primary"
+              href={PROFILE.resume}
+              download={PROFILE.resumeFileName}
+            >
+              <IconDownload /> Download Resume
+            </a>
+          </li>
         </ul>
-        <button className={styles.cvBtn} onClick={handleDownload}>
-          &#11015; Download CV
-        </button>
-      </div>
-    </nav>
+
+        <div className={styles.actions}>
+          <button
+            className={styles.iconBtn}
+            onClick={toggleTheme}
+            aria-label={isLight ? "Switch to dark theme" : "Switch to light theme"}
+            title={isLight ? "Dark mode" : "Light mode"}
+          >
+            {isLight ? <IconMoon /> : <IconSun />}
+          </button>
+          <a
+            className={`btn btn-ghost btn-sm ${styles.resumeBtn}`}
+            href={PROFILE.resume}
+            download={PROFILE.resumeFileName}
+          >
+            Resume <IconDownload size={16} />
+          </a>
+          <button
+            className={`${styles.iconBtn} ${styles.menuBtn}`}
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={menuOpen}
+            aria-controls="nav-menu"
+          >
+            {menuOpen ? <IconClose /> : <IconMenu />}
+          </button>
+        </div>
+      </nav>
+    </header>
   );
 };

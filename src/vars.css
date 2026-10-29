@@ -1,21 +1,84 @@
-﻿:root {
-  /* Primary teal color */
-  --color-primary: #1d6b5a;
-  --color-primary-light: #2a9070;
-  --color-primary-dark: #155045;
-
-  /* Backgrounds */
-  --color-bg: #f4f7f5;
-  --color-secondary: #ffffff;
-  --color-dark: #111827;
+﻿/* Design tokens. Dark is the default; light applies via [data-theme="light"]. */
+:root {
+  /* Surfaces — deeper, richer dark for a premium feel */
+  --bg: #030d0e;
+  --bg-elevated: #071214;
+  --surface: #0b1a1c;
+  --surface-hover: #0f2124;
+  --border: rgba(20, 184, 166, 0.10);
+  --border-strong: rgba(20, 184, 166, 0.22);
 
   /* Text */
-  --color-text: #1a1a2e;
-  --color-text-muted: #6b7280;
+  --text: #f0fafa;
+  --text-muted: #94a3b0;
+  --text-subtle: #64808a;
 
-  /* Accent */
-  --color-accent: #1d6b5a;
+  /* Accent — teal */
+  --accent: #14b8a6;
+  --accent-hover: #2dd4bf;
+  --accent-soft: rgba(20, 184, 166, 0.12);
+  --accent-glow: rgba(20, 184, 166, 0.40);
+  --on-accent: #030d0e;
 
-  /* Fonts */
-  --font-roboto: "Roboto", Arial, sans-serif;
+  --success: #22c55e;
+
+  /* Effects */
+  --nav-bg: rgba(3, 13, 14, 0.80);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 24px 60px -12px rgba(0, 0, 0, 0.75);
+  --grid-line: rgba(20, 184, 166, 0.05);
+
+  /* Type */
+  --font-display: "Outfit Variable", "Outfit", system-ui, sans-serif;
+  --font-body: "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Layout */
+  --container: 1180px;
+  --gutter: clamp(16px, 4vw, 32px);
+  --nav-height: 68px;
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Legacy aliases, kept until every section is migrated */
+  --color-primary: var(--accent);
+  --color-primary-light: var(--accent-hover);
+  --color-primary-dark: var(--accent);
+  --color-bg: var(--bg);
+  --color-secondary: var(--surface);
+  --color-dark: var(--bg-elevated);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-accent: var(--accent);
+  --font-roboto: var(--font-body);
+
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --bg: #f0fafa;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #e6f7f7;
+  --border: rgba(15, 80, 80, 0.10);
+  --border-strong: rgba(15, 80, 80, 0.20);
+
+  --text: #0d2626;
+  --text-muted: #3d6060;
+  --text-subtle: #5a8080;
+
+  --accent: #0d9488;
+  --accent-hover: #0f766e;
+  --accent-soft: rgba(13, 148, 136, 0.10);
+  --accent-glow: rgba(13, 148, 136, 0.28);
+  --on-accent: #ffffff;
+
+  --nav-bg: rgba(240, 250, 250, 0.85);
+  --shadow-sm: 0 1px 2px rgba(13, 38, 38, 0.06);
+  --shadow-lg: 0 24px 48px -16px rgba(13, 38, 38, 0.18);
+  --grid-line: rgba(13, 148, 136, 0.06);
+
+  color-scheme: light;
 }
