@@ -3,238 +3,629 @@
     {
       "id": 1,
       "title": "Python",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+      "imageSrc": "/assets/skills/python.svg",
       "category": "Languages",
       "proficiency": 95
     },
     {
       "id": 2,
       "title": "JavaScript",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      "imageSrc": "/assets/skills/javascript.svg",
       "category": "Languages",
       "proficiency": 90
     },
     {
       "id": 3,
       "title": "TypeScript",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+      "imageSrc": "/assets/skills/typescript.svg",
       "category": "Languages",
       "proficiency": 85
     },
     {
       "id": 4,
       "title": "React.js",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "imageSrc": "/assets/skills/react.svg",
       "category": "Frontend",
       "proficiency": 90
     },
     {
       "id": 5,
       "title": "Django",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg",
+      "imageSrc": "/assets/skills/django.svg",
       "category": "Backend",
-      "proficiency": 90
+      "proficiency": 90,
+      "silhouette": true
     },
     {
       "id": 6,
       "title": "FastAPI",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+      "imageSrc": "/assets/skills/fastapi.svg",
       "category": "Backend",
       "proficiency": 92
     },
     {
       "id": 7,
       "title": "Node.js",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      "imageSrc": "/assets/skills/nodejs.svg",
       "category": "Backend",
       "proficiency": 85
     },
     {
       "id": 8,
       "title": "Express.js",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+      "imageSrc": "/assets/skills/express.svg",
       "category": "Backend",
-      "proficiency": 85
+      "proficiency": 85,
+      "mono": true
     },
     {
       "id": 9,
       "title": "REST APIs",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/rest-api.svg",
       "category": "Backend",
-      "proficiency": 95
+      "proficiency": 95,
+      "mono": true
     },
     {
       "id": 10,
       "title": "WebSockets",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/websocket.svg",
       "category": "Backend",
-      "proficiency": 82
+      "proficiency": 82,
+      "mono": true
     },
     {
       "id": 11,
       "title": "MongoDB",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      "imageSrc": "/assets/skills/mongodb.svg",
       "category": "Database",
       "proficiency": 88
     },
     {
       "id": 12,
       "title": "SQL",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+      "imageSrc": "/assets/skills/mysql.svg",
       "category": "Database",
       "proficiency": 85
     },
     {
       "id": 13,
-      "title": "VectorDB",
-      "imageSrc": "",
-      "category": "Database",
-      "proficiency": 80
+      "title": "Vector Databases",
+      "imageSrc": "/assets/skills/vector-db.svg",
+      "category": "RAG",
+      "proficiency": 80,
+      "mono": true
     },
     {
       "id": 14,
       "title": "LangChain",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/langchain.svg",
       "category": "AI / LLM",
       "proficiency": 92
     },
     {
       "id": 15,
       "title": "LangGraph",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/langgraph.svg",
       "category": "AI / LLM",
       "proficiency": 90
     },
     {
       "id": 16,
       "title": "LangSmith",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/langchain.svg",
       "category": "AI / LLM",
       "proficiency": 85
     },
     {
       "id": 17,
       "title": "RAG System",
-      "imageSrc": "",
-      "category": "AI / LLM",
-      "proficiency": 90
+      "imageSrc": "/assets/skills/rag.svg",
+      "category": "RAG",
+      "proficiency": 90,
+      "mono": true
     },
     {
       "id": 18,
       "title": "Fine Tuning",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/fine-tuning.svg",
       "category": "AI / LLM",
-      "proficiency": 80
+      "proficiency": 80,
+      "mono": true
     },
     {
       "id": 19,
       "title": "Guardrails",
-      "imageSrc": "",
-      "category": "AI / LLM",
-      "proficiency": 82
+      "imageSrc": "/assets/skills/guardrails.svg",
+      "category": "Agents",
+      "proficiency": 82,
+      "mono": true
     },
     {
       "id": 20,
-      "title": "Agent Orch.",
-      "imageSrc": "",
-      "category": "AI / LLM",
-      "proficiency": 92
+      "title": "Agent Orchestration",
+      "imageSrc": "/assets/skills/agents.svg",
+      "category": "Agents",
+      "proficiency": 92,
+      "mono": true
     },
     {
       "id": 21,
-      "title": "Ctx Engineering",
-      "imageSrc": "",
+      "title": "Context Engineering",
+      "imageSrc": "/assets/skills/context.svg",
       "category": "AI / LLM",
-      "proficiency": 88
+      "proficiency": 88,
+      "mono": true
     },
     {
       "id": 22,
       "title": "Prompt Caching",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/prompt-cache.svg",
       "category": "AI / LLM",
-      "proficiency": 85
+      "proficiency": 85,
+      "mono": true
     },
     {
       "id": 23,
       "title": "Voice Bot",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/voice.svg",
       "category": "AI / LLM",
-      "proficiency": 88
+      "proficiency": 88,
+      "mono": true
     },
     {
       "id": 24,
       "title": "Chat Bot",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/chat.svg",
       "category": "AI / LLM",
-      "proficiency": 90
+      "proficiency": 90,
+      "mono": true
     },
     {
       "id": 25,
       "title": "AWS Bedrock",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+      "imageSrc": "/assets/skills/aws-bedrock.svg",
       "category": "Cloud / AWS",
       "proficiency": 88
     },
     {
       "id": 26,
       "title": "AWS Lambda",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/aws-lambda.svg",
       "category": "Cloud / AWS",
       "proficiency": 85
     },
     {
       "id": 27,
       "title": "AWS EC2",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/aws-ec2.svg",
       "category": "Cloud / AWS",
       "proficiency": 82
     },
     {
       "id": 28,
       "title": "AWS Lex",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/aws-lex.svg",
       "category": "Cloud / AWS",
       "proficiency": 80
     },
     {
       "id": 29,
       "title": "CloudWatch",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/aws-cloudwatch.svg",
       "category": "Cloud / AWS",
       "proficiency": 78
     },
     {
       "id": 30,
       "title": "Lightsail",
-      "imageSrc": "",
+      "imageSrc": "/assets/skills/aws-lightsail.svg",
       "category": "Cloud / AWS",
       "proficiency": 78
     },
     {
       "id": 31,
       "title": "Docker",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+      "imageSrc": "/assets/skills/docker.svg",
       "category": "DevOps",
       "proficiency": 85
     },
     {
       "id": 32,
       "title": "Git",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+      "imageSrc": "/assets/skills/git.svg",
       "category": "DevOps",
       "proficiency": 92
     },
     {
       "id": 33,
       "title": "GitHub",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      "imageSrc": "/assets/skills/github.svg",
       "category": "DevOps",
-      "proficiency": 92
+      "proficiency": 92,
+      "mono": true
     },
     {
       "id": 34,
       "title": "GitLab",
-      "imageSrc": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg",
+      "imageSrc": "/assets/skills/gitlab.svg",
+      "category": "DevOps",
+      "proficiency": 85
+    },
+    {
+      "id": 35,
+      "title": "CI & CD (GitLab)",
+      "imageSrc": "/assets/skills/gitlab.svg",
+      "category": "DevOps",
+      "proficiency": 80
+    },
+    {
+      "id": 36,
+      "title": "AWS S3",
+      "imageSrc": "/assets/skills/aws-s3.svg",
+      "category": "Cloud / AWS",
+      "proficiency": 85
+    },
+    {
+      "id": 37,
+      "title": "OCI (Oracle Cloud)",
+      "imageSrc": "/assets/skills/oracle.svg",
+      "category": "DevOps",
+      "proficiency": 75
+    },
+    {
+      "id": 38,
+      "title": "Nginx",
+      "imageSrc": "/assets/skills/nginx.svg",
+      "category": "DevOps",
+      "proficiency": 80
+    },
+    {
+      "id": 39,
+      "title": "Linux",
+      "imageSrc": "/assets/skills/linux.svg",
+      "category": "DevOps",
+      "proficiency": 80
+    },
+    {
+      "id": 40,
+      "title": "Semantic Search",
+      "imageSrc": "/assets/skills/semantic-search.svg",
+      "category": "RAG",
+      "proficiency": 88,
+      "mono": true
+    },
+    {
+      "id": 41,
+      "title": "Embedding Models",
+      "imageSrc": "/assets/skills/embeddings.svg",
+      "category": "RAG",
+      "proficiency": 85,
+      "mono": true
+    },
+    {
+      "id": 42,
+      "title": "Semantic Chunking",
+      "imageSrc": "/assets/skills/chunking.svg",
+      "category": "RAG",
+      "proficiency": 85,
+      "mono": true
+    },
+    {
+      "id": 43,
+      "title": "Weaviate",
+      "imageSrc": "/assets/skills/weaviate.svg",
+      "category": "RAG",
+      "proficiency": 80,
+      "mono": true
+    },
+    {
+      "id": 44,
+      "title": "Ollama",
+      "imageSrc": "/assets/skills/ollama.svg",
+      "category": "RAG",
+      "proficiency": 80,
+      "mono": true
+    },
+    {
+      "id": 45,
+      "title": "Hybrid Search",
+      "imageSrc": "/assets/skills/hybrid-search.svg",
+      "category": "RAG",
+      "proficiency": 75,
+      "mono": true
+    },
+    {
+      "id": 46,
+      "title": "Reranking (Cohere Rerank, Cross-Encoders)",
+      "imageSrc": "/assets/skills/reranking.svg",
+      "category": "RAG",
+      "proficiency": 70,
+      "mono": true
+    },
+    {
+      "id": 47,
+      "title": "RAG Evaluation",
+      "imageSrc": "/assets/skills/rag-eval.svg",
+      "category": "RAG",
+      "proficiency": 72,
+      "mono": true
+    },
+    {
+      "id": 48,
+      "title": "Claude Code",
+      "imageSrc": "/assets/skills/claude-code.svg",
+      "category": "Dev Tools",
+      "proficiency": 85
+    },
+    {
+      "id": 49,
+      "title": "Claude Desktop",
+      "imageSrc": "/assets/skills/claude.svg",
+      "category": "Dev Tools",
+      "proficiency": 85
+    },
+    {
+      "id": 50,
+      "title": "VS Code",
+      "imageSrc": "/assets/skills/vscode.svg",
+      "category": "Dev Tools",
+      "proficiency": 90
+    },
+    {
+      "id": 51,
+      "title": "Antigravity",
+      "imageSrc": "/assets/skills/antigravity.svg",
+      "category": "Dev Tools",
+      "proficiency": 75
+    },
+    {
+      "id": 52,
+      "title": "OpenClaw",
+      "imageSrc": "/assets/skills/openclaw.svg",
+      "category": "AI / LLM",
+      "proficiency": 75,
+      "mono": true
+    },
+    {
+      "id": 53,
+      "title": "Google Play Store",
+      "imageSrc": "/assets/skills/google-play.svg",
+      "category": "DevOps",
+      "proficiency": 80,
+      "mono": true
+    },
+    {
+      "id": 54,
+      "title": "OpenAI API",
+      "imageSrc": "/assets/skills/openai.svg",
+      "category": "AI / LLM",
+      "proficiency": 90,
+      "mono": true
+    },
+    {
+      "id": 55,
+      "title": "Anthropic API",
+      "imageSrc": "/assets/skills/anthropic.svg",
+      "category": "AI / LLM",
+      "proficiency": 85,
+      "mono": true
+    },
+    {
+      "id": 56,
+      "title": "Google Gemini API",
+      "imageSrc": "/assets/skills/gemini.svg",
+      "category": "AI / LLM",
+      "proficiency": 75
+    },
+    {
+      "id": 57,
+      "title": "Open-Source LLMs (Llama)",
+      "imageSrc": "/assets/skills/meta.svg",
+      "category": "AI / LLM",
+      "proficiency": 80
+    },
+    {
+      "id": 58,
+      "title": "Hugging Face",
+      "imageSrc": "/assets/skills/huggingface.svg",
+      "category": "AI / LLM",
+      "proficiency": 75
+    },
+    {
+      "id": 59,
+      "title": "Prompt Engineering",
+      "imageSrc": "/assets/skills/prompt-eng.svg",
+      "category": "AI / LLM",
+      "proficiency": 90,
+      "mono": true
+    },
+    {
+      "id": 60,
+      "title": "Chain-of-Thought",
+      "imageSrc": "/assets/skills/cot.svg",
+      "category": "AI / LLM",
+      "proficiency": 85,
+      "mono": true
+    },
+    {
+      "id": 61,
+      "title": "JSON Mode",
+      "imageSrc": "/assets/skills/json.svg",
+      "category": "AI / LLM",
+      "proficiency": 85,
+      "mono": true
+    },
+    {
+      "id": 62,
+      "title": "Context Windows",
+      "imageSrc": "/assets/skills/context-window.svg",
+      "category": "AI / LLM",
+      "proficiency": 85,
+      "mono": true
+    },
+    {
+      "id": 63,
+      "title": "Memory Management",
+      "imageSrc": "/assets/skills/memory.svg",
+      "category": "AI / LLM",
+      "proficiency": 80,
+      "mono": true
+    },
+    {
+      "id": 64,
+      "title": "LlamaIndex",
+      "imageSrc": "/assets/skills/llamaindex.svg",
+      "category": "AI / LLM",
+      "proficiency": 75,
+      "mono": true
+    },
+    {
+      "id": 65,
+      "title": "Model Context Protocol (MCP)",
+      "imageSrc": "/assets/skills/mcp.svg",
+      "category": "Agents",
+      "proficiency": 80,
+      "mono": true
+    },
+    {
+      "id": 66,
+      "title": "Agent Harness",
+      "imageSrc": "/assets/skills/harness.svg",
+      "category": "Agents",
+      "proficiency": 80,
+      "mono": true
+    },
+    {
+      "id": 67,
+      "title": "ReAct (Reason + Act)",
+      "imageSrc": "/assets/skills/react-loop.svg",
+      "category": "Agents",
+      "proficiency": 85,
+      "mono": true
+    },
+    {
+      "id": 68,
+      "title": "Plan-and-Execute",
+      "imageSrc": "/assets/skills/plan.svg",
+      "category": "Agents",
+      "proficiency": 80,
+      "mono": true
+    },
+    {
+      "id": 69,
+      "title": "Multi-Agent Systems",
+      "imageSrc": "/assets/skills/multi-agent.svg",
+      "category": "Agents",
+      "proficiency": 80,
+      "mono": true
+    },
+    {
+      "id": 70,
+      "title": "AutoGen",
+      "imageSrc": "/assets/skills/autogen.svg",
+      "category": "Agents",
+      "proficiency": 70,
+      "mono": true
+    },
+    {
+      "id": 71,
+      "title": "Prompt Injection Defense",
+      "imageSrc": "/assets/skills/injection.svg",
+      "category": "Agents",
+      "proficiency": 80,
+      "mono": true
+    },
+    {
+      "id": 72,
+      "title": "NeMo Guardrails",
+      "imageSrc": "/assets/skills/nvidia.svg",
+      "category": "Agents",
+      "proficiency": 70
+    },
+    {
+      "id": 73,
+      "title": "Llama Guard",
+      "imageSrc": "/assets/skills/meta.svg",
+      "category": "Agents",
+      "proficiency": 70
+    },
+    {
+      "id": 74,
+      "title": "Hierarchical Chunking",
+      "imageSrc": "/assets/skills/hier-chunk.svg",
+      "category": "RAG",
+      "proficiency": 75,
+      "mono": true
+    },
+    {
+      "id": 75,
+      "title": "BM25",
+      "imageSrc": "/assets/skills/bm25.svg",
+      "category": "RAG",
+      "proficiency": 75,
+      "mono": true
+    },
+    {
+      "id": 76,
+      "title": "Query Transformations",
+      "imageSrc": "/assets/skills/query.svg",
+      "category": "RAG",
+      "proficiency": 75,
+      "mono": true
+    },
+    {
+      "id": 77,
+      "title": "Query Rewriting",
+      "imageSrc": "/assets/skills/rewrite.svg",
+      "category": "RAG",
+      "proficiency": 80,
+      "mono": true
+    },
+    {
+      "id": 78,
+      "title": "Document Parsing",
+      "imageSrc": "/assets/skills/parse.svg",
+      "category": "RAG",
+      "proficiency": 80,
+      "mono": true
+    },
+    {
+      "id": 79,
+      "title": "Context Precision",
+      "imageSrc": "/assets/skills/target.svg",
+      "category": "RAG",
+      "proficiency": 72,
+      "mono": true
+    },
+    {
+      "id": 80,
+      "title": "Context Recall",
+      "imageSrc": "/assets/skills/recall.svg",
+      "category": "RAG",
+      "proficiency": 72,
+      "mono": true
+    },
+    {
+      "id": 81,
+      "title": "Faithfulness",
+      "imageSrc": "/assets/skills/faithful.svg",
+      "category": "RAG",
+      "proficiency": 72,
+      "mono": true
+    },
+    {
+      "id": 82,
+      "title": "Answer Relevance",
+      "imageSrc": "/assets/skills/relevance.svg",
+      "category": "RAG",
+      "proficiency": 72,
+      "mono": true
+    },
+    {
+      "id": 83,
+      "title": "Docker Compose",
+      "imageSrc": "/assets/skills/docker.svg",
       "category": "DevOps",
       "proficiency": 85
     }
@@ -246,7 +637,10 @@
     "Backend",
     "Database",
     "AI / LLM",
+    "Agents",
+    "RAG",
     "Cloud / AWS",
-    "DevOps"
+    "DevOps",
+    "Dev Tools"
   ]
 }

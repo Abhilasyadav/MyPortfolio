@@ -1,4 +1,3 @@
-import React from "react";
 import { Hero } from "../components/Hero/Hero";
 import { About } from "../components/About/About";
 import { Contact } from "../components/Contact/Contact";
@@ -6,8 +5,8 @@ import { Contact } from "../components/Contact/Contact";
 const HomePage = () => (
     <>
         <Hero />
-        <About />
-        <Contact />
+        <div className="defer"><About /></div>
+        <div className="defer"><Contact /></div>
     </>
 );
 

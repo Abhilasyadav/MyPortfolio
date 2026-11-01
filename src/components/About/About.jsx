@@ -1,198 +1,98 @@
-import React, { useEffect, useRef, useState } from "react";
-import { motion, useInView } from "motion/react";
+import { Link } from "react-router-dom";
+import { motion } from "motion/react";
 import styles from "./About.module.css";
+import { PROFILE } from "../../data/profile";
+import { IconDownload } from "../Icons";
 
-function Counter({ end, suffix = "%" }) {
-  const [count, setCount] = useState(0);
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
-
-  useEffect(() => {
-    if (!isInView) return;
-    let cur = 0;
-    const step = Math.ceil(end / 28);
-    const t = setInterval(() => {
-      cur += step;
-      if (cur >= end) { setCount(end); clearInterval(t); }
-      else setCount(cur);
-    }, 40);
-    return () => clearInterval(t);
-  }, [isInView, end]);
-
-  return <span ref={ref}>{count}{suffix}</span>;
-}
+const CAPABILITIES = [
+  {
+    title: "AI agents",
+    text: "Agents that hold a real conversation and then act: confirm, reschedule or cancel a booking by phone or WhatsApp. Built with LangGraph and OpenClaw, using OpenAI or AWS Bedrock models, and traced with LangSmith.",
+    tags: ["Voice bots", "WhatsApp bots", "RAG", "LangGraph", "OpenClaw"],
+  },
+  {
+    title: "Full-stack products",
+    text: "The dashboard and API around the agent: React and TypeScript front ends, Python (FastAPI, Django) and Node.js (Express) back ends, MongoDB data, role-based login and one place for staff to see everything.",
+    tags: ["React", "Node.js", "Python", "FastAPI", "Django", "MongoDB"],
+  },
+  {
+    title: "Ship and run it",
+    text: "Git and GitHub for code, Docker and GitLab CI/CD pipelines for releases, and deployments on AWS (Lightsail, Lambda, Bedrock) and Oracle Cloud, with Nginx, HTTPS and CloudWatch logs. Android apps go live on the Google Play Store.",
+    tags: ["Git", "GitHub", "Docker", "GitLab CI/CD", "AWS", "OCI", "Google Play Store"],
+  },
+];
 
 const INFO_ROWS = [
-  { label: "Experience", value: "1.5+ Years" },
+  { label: "Experience", value: "1.5+ years" },
   { label: "Education", value: "B.Tech, Computer Science" },
-  { label: "Location", value: "India" },
-  { label: "Email", value: "yadavabhilash2003@gmail.com" },
-  { label: "Freelance", value: "Open to Work ✅" },
+  { label: "Location", value: PROFILE.location },
+  { label: "Email", value: PROFILE.email, href: `mailto:${PROFILE.email}` },
+  { label: "Availability", value: "Open to full-time and freelance work" },
 ];
 
-const STATS = [
-  { pct: 95, suffix: "%", label: "Python / AI" },
-  { pct: 92, suffix: "%", label: "LLM / Agents" },
-  { pct: 90, suffix: "%", label: "React Dashboards" },
-  { pct: 1.5, suffix: "+ Yrs", label: "Experience" },
-];
-
-const SOCIALS = [
-  { href: "https://www.linkedin.com/in/abhilash-yadav-572489251/", label: "in", bg: "#0077b5", color: "#fff" },
-  { href: "https://www.github.com/abhilasyadav", label: "gh", bg: "#24292e", color: "#fff" },
-  { href: "mailto:yadavabhilash2003@gmail.com", label: "@", bg: "#14b8a6", color: "#fff" },
-];
-
-const fadeUp = (delay = 0) => ({
-  initial: { opacity: 0, y: 28 },
+const reveal = (delay = 0) => ({
+  initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-80px" },
-  transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1], delay },
+  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay },
 });
 
-export const About = () => {
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/resume.pdf";
-    link.download = "Abhilash_Yadav_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+export const About = () => (
+  <section id="about" className={styles.section}>
+    <div className={styles.inner}>
+      <motion.header className={styles.head} {...reveal(0)}>
+        <p className="eyebrow">01 / About</p>
+        <h2 className={styles.heading}>
+          Full-stack developer who builds <em>AI agents</em>.
+        </h2>
+      </motion.header>
 
-  return (
-    <section id="about" className={styles.section}>
+      <motion.div className={styles.body} {...reveal(0.08)}>
+        <p className={styles.lede}>
+          I build the whole product, not just the model: the AI agent, the API behind it and the
+          dashboard your team uses every day.
+        </p>
+        <p>
+          My recent work includes CareDesk, where a voice bot phones patients in their own
+          language to confirm hospital follow-ups, and DealerDesk, where a WhatsApp bot books
+          two-wheeler services while a React dashboard tracks bookings, sales and revenue. I also
+          built a semantic search that answers questions from private documents with RAG.
+        </p>
+        <p>
+          I care about agents that are reliable in production: fixed scripts where wording
+          matters, models only where judgement is needed, every action going through the same
+          business rules as the dashboard, and traces to see what happened on any call or chat.
+        </p>
 
-      {/* ── Top row ── */}
-      <div className={styles.topRow}>
+        <div className={styles.links}>
+          <Link className="btn btn-primary" to="/projects">
+            See projects
+          </Link>
+          <a className="btn btn-ghost" href={PROFILE.resume} download={PROFILE.resumeFileName}>
+            <IconDownload /> Download CV
+          </a>
+        </div>
+      </motion.div>
 
-        {/* Left — identity */}
-        <motion.div className={styles.leftCol} {...fadeUp(0)}>
-          <div className={styles.labelChip}>About Me</div>
-          <h2 className={styles.heading}>
-            AI Engineer &amp; <br />
-            <span className={styles.accentText}>Full‑Stack Developer</span>
-          </h2>
-          <p className={styles.subHeading}>
-            Building AI systems that automate real-world workflows
-          </p>
-          <p className={styles.bio}>
-            I'm an AI &amp; Full-Stack developer specializing in building intelligent,
-            agentic systems — from LLM-powered voice bots and RAG pipelines to
-            production REST APIs and real-time React dashboards.
-          </p>
+      <ul className={styles.caps}>
+        {CAPABILITIES.map((c, i) => (
+          <motion.li key={c.title} className={styles.cap} {...reveal(0.05 * i)}>
+            <p className="eyebrow">{String(i + 1).padStart(2, "0")}</p>
+            <h3 className={styles.capTitle}>{c.title}</h3>
+            <p className={styles.capText}>{c.text}</p>
+            <p className={styles.capTags}>{c.tags.join(" / ")}</p>
+          </motion.li>
+        ))}
+      </ul>
 
-          <motion.button
-            className={styles.downloadBtn}
-            onClick={handleDownload}
-            whileHover={{ scale: 1.04, y: -2, boxShadow: "0 16px 36px -8px rgba(20,184,166,0.5)" }}
-            whileTap={{ scale: 0.97 }}
-          >
-            ⬇&nbsp;&nbsp;Download CV
-          </motion.button>
-
-          <div className={styles.socials}>
-            {SOCIALS.map((s, i) => (
-              <motion.a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialCircle}
-                style={{ background: s.bg, color: s.color }}
-                initial={{ opacity: 0, scale: 0.6 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4 + i * 0.1, duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -4, scale: 1.12 }}
-              >
-                {s.label}
-              </motion.a>
-            ))}
+      <motion.dl className={styles.info} {...reveal(0.12)}>
+        {INFO_ROWS.map((row) => (
+          <div key={row.label} className={styles.row}>
+            <dt className="eyebrow">{row.label}</dt>
+            <dd>{row.href ? <a href={row.href}>{row.value}</a> : row.value}</dd>
           </div>
-        </motion.div>
-
-        {/* Right — description */}
-        <motion.div className={styles.rightCol} {...fadeUp(0.15)}>
-          <div className={styles.glassCard}>
-            <p className={styles.rightText}>
-              I architect and deploy end-to-end AI solutions using LangChain,
-              LangGraph, and AWS Bedrock — building fully agentic and scripted
-              voice bots (Sarvam, Exotel) and WhatsApp chatbots that handle
-              real business workflows autonomously.
-            </p>
-            <p className={styles.rightText}>
-              I also build highly interactive business dashboards using React,
-              helping teams track and visualize all their data in one place.
-              My goal is seamless AI + product integration.
-            </p>
-            <div className={styles.techPills}>
-              {["Python", "FastAPI", "LangChain", "LangGraph", "AWS Bedrock", "React.js", "Docker"].map((t, i) => (
-                <motion.span
-                  key={t}
-                  className={styles.techPill}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.3 + i * 0.05 }}
-                  whileHover={{ scale: 1.08 }}
-                >
-                  {t}
-                </motion.span>
-              ))}
-            </div>
-          </div>
-          <p className={styles.signature}>Abhilash Yadav</p>
-        </motion.div>
-      </div>
-
-      {/* ── Bottom row ── */}
-      <div className={styles.bottomRow}>
-
-        {/* Info table */}
-        <motion.div className={styles.infoTable} {...fadeUp(0.05)}>
-          <h3 className={styles.tableTitle}>Personal Info</h3>
-          {INFO_ROWS.map((row, i) => (
-            <motion.div
-              key={i}
-              className={styles.infoRow}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 + i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <span className={styles.infoLabel}>{row.label}</span>
-              <span className={styles.infoDot} />
-              <span className={styles.infoValue}>{row.value}</span>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div {...fadeUp(0.1)}>
-          <div className={styles.statsOuter}>
-            <div className={styles.statsInner}>
-              {STATS.map((s, i) => (
-                <motion.div
-                  key={i}
-                  className={styles.statCard}
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.15 + i * 0.1, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  whileHover={{ scale: 1.05, y: -4 }}
-                >
-                  <span className={styles.statPct}>
-                    <Counter end={s.pct} suffix={s.suffix} />
-                  </span>
-                  <span className={styles.statLabel}>{s.label}</span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-
-      </div>
-    </section>
-  );
-};
+        ))}
+      </motion.dl>
+    </div>
+  </section>
+);

@@ -1,69 +1,56 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
+import { motion } from "motion/react";
 import styles from "./Projects.module.css";
 import projects from "../../data/projects.json";
 import { ProjectCard } from "./ProjectCard";
 
-const ALL_TAGS = ["All", ...new Set(
-  projects.flatMap(p => p.skills[0]?.split(",").map(s => s.trim()) || [])
-)];
+// Each project lists its tech as one comma-separated string.
+const split = (s) => s?.split(",").map(t => t.trim()).filter(Boolean) || [];
+const techOf = (p) => [...split(p.skills[0]), ...split(p.deploy)];
+
+// Chips only for tech shared by several projects, so the row stays short.
+const tagCounts = projects.flatMap(techOf).reduce(
+  (acc, t) => acc.set(t, (acc.get(t) || 0) + 1),
+  new Map()
+);
+const ALL_TAGS = ["All", ...[...tagCounts].filter(([, n]) => n > 1).map(([t]) => t)];
 
 export const Projects = () => {
   const [filter, setFilter] = useState("All");
 
   const visible = filter === "All"
     ? projects
-    : projects.filter(p => p.skills[0]?.includes(filter));
+    : projects.filter(p => techOf(p).includes(filter));
 
   return (
     <section className={styles.section} id="projects">
-      {/* Filter chips */}
-      <motion.div
-        className={styles.filters}
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      >
-        {ALL_TAGS.slice(0, 8).map((tag, i) => (
-          <motion.button
+      <div className={styles.filters} role="group" aria-label="Filter projects by technology">
+        {ALL_TAGS.map((tag) => (
+          <button
             key={tag}
+            type="button"
             className={`${styles.chip} ${filter === tag ? styles.chipActive : ""}`}
+            aria-pressed={filter === tag}
             onClick={() => setFilter(tag)}
-            whileHover={{ scale: 1.06, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.06, duration: 0.4 }}
           >
             {tag}
-          </motion.button>
+          </button>
         ))}
-      </motion.div>
+      </div>
 
       {visible.length === 0 ? (
-        <motion.p
-          className={styles.empty}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-        >
-          No projects found for this filter.
-        </motion.p>
+        <p className={styles.empty}>No projects found for this filter.</p>
       ) : (
-        <motion.div className={styles.grid} layout>
-          <AnimatePresence mode="popLayout">
-            {visible.map((project, id) => (
-              <motion.div
-                key={project.title || id}
-                layout
-                initial={{ opacity: 0, scale: 0.92, y: 24 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.88, y: -16 }}
-                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1], delay: id * 0.07 }}
-              >
-                <ProjectCard project={project} />
-              </motion.div>
-            ))}
-          </AnimatePresence>
+        <motion.div
+          key={filter}
+          className={styles.grid}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {visible.map((project, i) => (
+            <ProjectCard key={project.title} project={project} index={i + 1} />
+          ))}
         </motion.div>
       )}
     </section>

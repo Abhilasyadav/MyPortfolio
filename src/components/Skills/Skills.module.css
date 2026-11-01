@@ -1,9 +1,6 @@
-﻿/* Skills.module.css — premium dark teal */
-
 .section {
   width: 100%;
-  background: var(--bg);
-  padding: 32px 0 80px;
+  padding: 40px 0 112px;
 }
 
 .inner {
@@ -12,230 +9,114 @@
   padding: 0 var(--gutter);
 }
 
-/* Filter chips */
+/* Category filter: plain mono tabs */
 .filters {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 48px;
+  gap: 8px 6px;
+  margin-bottom: 32px;
 }
 
 .chip {
-  padding: 8px 20px;
-  border-radius: 999px;
-  border: 1.5px solid var(--border-strong);
-  background: var(--surface);
+  padding: 7px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
   color: var(--text-muted);
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.22s var(--ease);
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
 }
 
 .chip:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  background: var(--accent-soft);
+  border-color: var(--text);
+  color: var(--text);
 }
 
-.chipActive {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--on-accent);
-  box-shadow: 0 4px 16px -4px var(--accent-glow);
+.chipActive,
+.chipActive:hover {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--bg);
 }
 
-/* Grid */
-.grid {
+/* Index list: icon, name, level; ruled like a table of contents */
+.list {
+  list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 40px;
+  border-top: 1px solid var(--border-strong);
 }
 
-/* Card */
-.card {
-  background: var(--surface);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 20px 22px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease),
-    border-color 0.25s, box-shadow 0.25s;
-  position: relative;
-  overflow: hidden;
-}
-
-.card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--accent), #5eead4);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.card:hover {
-  border-color: var(--accent);
-  box-shadow: 0 12px 40px rgba(20, 184, 166, 0.15);
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Card top */
-.cardTop {
-  display: flex;
+.item {
+  display: grid;
+  grid-template-columns: 36px 1fr auto;
   align-items: center;
   gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  transition: padding-left 0.2s var(--ease);
+}
+
+.item:hover {
+  padding-left: 8px;
 }
 
 .iconWrap {
-  flex-shrink: 0;
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: var(--bg-elevated);
-  border: 1.5px solid var(--border-strong);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color 0.25s, background 0.25s;
-}
-
-.card:hover .iconWrap {
-  border-color: var(--accent);
-  background: var(--accent-soft);
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
 }
 
 .icon {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
 }
 
+/* Single-colour icons are drawn in ink, so flip them on the dark theme */
+:global([data-theme="dark"]) .mono {
+  filter: invert(1);
+}
+
+/* Very dark brand colours turn into a white silhouette on the dark theme */
+:global([data-theme="dark"]) .silhouette {
+  filter: brightness(0) invert(1);
+}
+
 .abbr {
+  font-family: var(--font-mono);
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--accent);
-  letter-spacing: 0.5px;
 }
 
-.cardInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.skillName {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text);
-  line-height: 1.2;
-}
-
-.category {
-  font-size: 0.76rem;
-  color: var(--text-subtle);
+.name {
+  font-family: var(--font-display);
+  font-size: 1.12rem;
   font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  color: var(--text);
 }
 
-/* Progress bar */
-.barTrack {
-  height: 5px;
-  border-radius: 999px;
-  background: var(--bg-elevated);
-  overflow: hidden;
+.level {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-subtle);
 }
 
-.barFill {
-  height: 100%;
-  border-radius: 999px;
-  transition: width 1s var(--ease);
-  box-shadow: 0 0 8px rgba(20, 184, 166, 0.5);
-}
-
-/* Card bottom */
-.cardBottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.pct {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--text-muted);
-}
-
-.badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 3px 12px;
-  border-radius: 999px;
-  border: 1px solid;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .section {
-    padding: 24px 0 60px;
+    padding-bottom: 72px;
   }
 
-  .grid {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .card {
-    padding: 14px 16px;
-    gap: 10px;
-  }
-
-  .iconWrap {
-    width: 42px;
-    height: 42px;
-    border-radius: 10px;
-  }
-
-  .icon {
-    width: 26px;
-    height: 26px;
-  }
-
-  .skillName {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 360px) {
-  .grid {
+  .list {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (pointer: coarse) {
+  .chip {
+    min-height: 40px;
   }
 }

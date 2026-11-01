@@ -1,0 +1,56 @@
+.cardTitle {
+  margin: 8px 0 8px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.cardText {
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+.shipped {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--text);
+  border-radius: var(--radius);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+
+@media (hover: hover) {
+  .card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: var(--card-shadow-hover);
+  }
+}
+
+.tech {
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  color: var(--accent);
+}
+
+.more {
+  margin-top: 20px;
+  color: var(--text-muted);
+}
+
+.more a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.more a:hover {
+  color: var(--accent);
+}

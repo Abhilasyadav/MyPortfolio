@@ -1,72 +1,51 @@
-import React from "react";
-import { motion } from "motion/react";
 import styles from "./ProjectCard.module.css";
 import { getImageUrl } from "../../utils";
 
 export const ProjectCard = ({
-  project: { title, imageSrc, description, skills, demo, source },
+  project: { title, imageSrc, images, description, skills, deploy, demo, source },
+  index,
 }) => {
-  const mainTech = skills[0]?.split(",")[0]?.trim() || skills[0];
+  const techs = skills[0]?.split(",").map((s) => s.trim()) || [];
+  const shots = images?.length ? images : [imageSrc];
 
   return (
-    <motion.div
-      className={styles.container}
-      tabIndex={0}
-      whileHover={{ y: -8, boxShadow: "0 24px 56px rgba(20,184,166,0.22)" }}
-      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-    >
-      <div className={styles.imageWrapper}>
-        <motion.img
-          src={getImageUrl(imageSrc)}
-          alt={`Screenshot of ${title}`}
-          className={styles.image}
-          loading="lazy"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-        />
-        <span className={styles.badge}>{mainTech}</span>
+    <article className={styles.container}>
+      <div className={`${styles.imageWrapper} ${shots.length > 1 ? styles.multi : ""}`}>
+        {shots.map((src, i) => (
+          <img
+            key={src}
+            src={getImageUrl(src)}
+            alt={`Screenshot ${i + 1} of ${title}`}
+            className={styles.image}
+            loading="lazy"
+            decoding="async"
+            width="1000"
+            height="450"
+          />
+        ))}
       </div>
 
       <div className={styles.body}>
+        <p className="eyebrow">{String(index).padStart(2, "0")}</p>
         <h3 className={styles.title}>{title}</h3>
         <p className={styles.description}>{description}</p>
-        <ul className={styles.skills}>
-          {skills[0]?.split(",").map((skill, id) => (
-            <motion.li
-              key={id}
-              className={styles.skill}
-              whileHover={{ scale: 1.08 }}
-              transition={{ duration: 0.15 }}
-            >
-              {skill.trim()}
-            </motion.li>
-          ))}
-        </ul>
-        <div className={styles.links}>
-          {demo && (
-            <motion.a
-              href={demo}
-              className={styles.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.04, y: -1 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Live Demo
-            </motion.a>
-          )}
-          <motion.a
-            href={source}
-            className={styles.linkSecondary}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.04, y: -1 }}
-            whileTap={{ scale: 0.97 }}
-          >
-            Source Code
-          </motion.a>
-        </div>
+        <p className={styles.skills}>{techs.join(" / ")}</p>
+        {deploy && <p className={styles.deploy}>Deploy: {deploy.split(",").map((t) => t.trim()).join(" / ")}</p>}
+        {(demo || source) && (
+          <div className={styles.links}>
+            {demo && (
+              <a href={demo} className={styles.link} target="_blank" rel="noopener noreferrer">
+                Live demo ↗
+              </a>
+            )}
+            {source && (
+              <a href={source} className={styles.link} target="_blank" rel="noopener noreferrer">
+                Source ↗
+              </a>
+            )}
+          </div>
+        )}
       </div>
-    </motion.div>
+    </article>
   );
 };

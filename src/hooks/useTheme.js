@@ -4,7 +4,7 @@ const STORAGE_KEY = "theme";
 
 // The initial value is set by an inline script in index.html to avoid a flash.
 const readTheme = () =>
-  document.documentElement.getAttribute("data-theme") === "light" ? "light" : "dark";
+  document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
 
 export function useTheme() {
   const [theme, setTheme] = useState(readTheme);
@@ -13,7 +13,7 @@ export function useTheme() {
     document.documentElement.setAttribute("data-theme", theme);
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", theme === "light" ? "#fafaf9" : "#0b0d12");
+      ?.setAttribute("content", theme === "light" ? "#f3efe6" : "#12110e");
   }, [theme]);
 
   const toggleTheme = useCallback(() => {

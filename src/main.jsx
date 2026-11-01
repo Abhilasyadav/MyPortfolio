@@ -3,7 +3,9 @@ import ReactDOM from "react-dom/client";
 
 // Global styles load before components so module styles can override them.
 import "@fontsource-variable/inter";
-import "@fontsource-variable/outfit";
+import "@fontsource-variable/fraunces";
+import "@fontsource-variable/jetbrains-mono";
+import "./vars.css";
 import "./index.css";
 
 import App from "./App.jsx";

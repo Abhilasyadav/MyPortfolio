@@ -1,41 +1,81 @@
 [
   {
+    "title": "CareDesk: Dashboard & Voice Bot",
+    "imageSrc": "projects/caredesk-dashboard.webp",
+    "description": "A multi-tenant hospital follow-up platform. Staff manage doctors, schedules and follow-ups on a React dashboard, while an AI voice bot phones patients, speaks their language, and confirms, reschedules or cancels appointments live.",
+    "skills": [
+      "React, TypeScript, Node.js, Express, MongoDB, Exotel, Sarvam AI (STT, TTS, Translation), WebSocket, LangGraph, LangSmith, OpenAI"
+    ],
+    "deploy": "Git, GitLab, GitLab CI/CD, Docker, AWS Lightsail"
+  },
+  {
+    "title": "DealerDesk: Dashboard & WhatsApp Bot",
+    "imageSrc": "projects/dealerdesk-dashboard.webp",
+    "images": [
+      "projects/dealerdesk-dashboard.webp",
+      "projects/dealerdesk-whatsapp.webp"
+    ],
+    "description": "A service and sales desk for two-wheeler dealerships. A React dashboard tracks bookings, services due, sales, inventory and revenue, while a WhatsApp bot on Meta's Cloud API greets customers, books services and sends reminders.",
+    "skills": [
+      "React, JavaScript, Node.js, Express, MongoDB, Webhooks, Meta WhatsApp Cloud API"
+    ],
+    "deploy": "Git, GitLab, GitLab CI/CD, Docker, OCI"
+  },
+  {
+    "title": "Semantic Search (RAG)",
+    "imageSrc": "projects/semantic-search.svg",
+    "description": "Search documents by meaning instead of keywords. PDFs are chunked and embedded into a Weaviate vector database, and a local Ollama model writes answers from the best matching passages.",
+    "skills": [
+      "Python, Weaviate, Ollama, RAG, Embeddings, Docker"
+    ]
+  },
+  {
     "title": "Gaming Needs",
-    "imageSrc": "projects/gaming needs.png",
+    "imageSrc": "projects/gaming needs.webp",
     "description": "A full-stack gaming e-commerce platform with secure authentication, product management, and seamless user experience. Built using React and Spring Boot.",
-    "skills": ["Spring Boot, React, Spring Security, Spring MVC, Spring Data/Jpa, MYSQL"],
+    "skills": [
+      "Spring Boot, React, Spring Security, Spring MVC, Spring Data/Jpa, MYSQL"
+    ],
     "demo": "https://gaming-needs.netlify.app/user",
     "source": "https://github.com/Abhilasyadav/Gaming-Needs-be"
   },
   {
     "title": "Currency Converter",
-    "imageSrc": "projects/currency.png",
+    "imageSrc": "projects/currency.webp",
     "description": "A real-time currency converter app with a clean UI, leveraging live exchange rates for accurate conversions. Built with React.",
-    "skills": ["React"],
+    "skills": [
+      "React"
+    ],
     "demo": "https://abhilashcurrencyconverter.netlify.app/",
     "source": "https://github.com/Abhilasyadav/currencyConvertor"
   },
   {
     "title": "To Do List",
-    "imageSrc": "projects/todo.png",
+    "imageSrc": "projects/todo.webp",
     "description": "A productivity-focused to-do list app with persistent storage and intuitive task management. Built with React.",
-    "skills": ["React"],
+    "skills": [
+      "React"
+    ],
     "demo": "https://abhilashtodolist.netlify.app/",
     "source": "https://github.com/Abhilasyadav/TodoList"
   },
   {
     "title": "Colour Switcher",
-    "imageSrc": "projects/color.png",
+    "imageSrc": "projects/color.webp",
     "description": "A simple yet elegant color theme switcher for instant background changes. Built with React.",
-    "skills": ["React"],
+    "skills": [
+      "React"
+    ],
     "demo": "https://bgcolorabhilash.netlify.app/",
     "source": "https://github.com/Abhilasyadav/Bgcolor"
   },
-   {
+  {
     "title": "Password Generator",
-    "imageSrc": "projects/passgen.png",
+    "imageSrc": "projects/passgen.webp",
     "description": "A secure password generator with customizable options for strength and length. Built with React.",
-    "skills": ["React"],
+    "skills": [
+      "React"
+    ],
     "demo": "https://abhilashpasswordgenerator.netlify.app/",
     "source": "https://github.com/Abhilasyadav/passwordGenerator"
   }

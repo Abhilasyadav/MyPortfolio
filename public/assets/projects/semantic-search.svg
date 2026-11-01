@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" role="img" aria-label="Semantic search over documents">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1712"/>
+      <stop offset="1" stop-color="#2a2218"/>
+    </linearGradient>
+    <linearGradient id="ac" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff7a50"/>
+      <stop offset="1" stop-color="#ffc4ad"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="450" fill="url(#bg)"/>
+  <circle cx="140" cy="380" r="170" fill="#ffc4ad" opacity="0.10"/>
+  <!-- search bar -->
+  <rect x="150" y="60" width="700" height="64" rx="32" fill="#2b261d" stroke="#ffc4ad" stroke-opacity="0.45"/>
+  <circle cx="198" cy="92" r="14" fill="none" stroke="url(#ac)" stroke-width="4"/>
+  <line x1="208" y1="102" x2="220" y2="114" stroke="url(#ac)" stroke-width="4" stroke-linecap="round"/>
+  <text x="244" y="100" fill="#efe7d6" font-family="Arial, sans-serif" font-size="22">how do I get my money back?</text>
+  <!-- vector dots -->
+  <g fill="#ffc4ad" opacity="0.7">
+    <circle cx="210" cy="190" r="5"/><circle cx="260" cy="215" r="4"/><circle cx="300" cy="180" r="6"/>
+    <circle cx="340" cy="230" r="4"/><circle cx="395" cy="195" r="5"/><circle cx="450" cy="240" r="4"/>
+  </g>
+  <g fill="#ff7a50">
+    <circle cx="560" cy="200" r="9"/><circle cx="600" cy="225" r="7"/><circle cx="585" cy="178" r="6"/>
+  </g>
+  <circle cx="585" cy="204" r="52" fill="none" stroke="#ff7a50" stroke-dasharray="6 6" opacity="0.8"/>
+  <!-- results -->
+  <rect x="150" y="280" width="320" height="110" rx="16" fill="#2b261d" stroke="#ff7a50" stroke-opacity="0.5"/>
+  <text x="172" y="312" fill="#f0fafa" font-family="Arial, sans-serif" font-size="18" font-weight="700">Refund policy.pdf · p.4</text>
+  <rect x="172" y="328" width="270" height="8" rx="4" fill="#4a4333"/>
+  <rect x="172" y="348" width="220" height="8" rx="4" fill="#4a4333"/>
+  <rect x="172" y="366" width="150" height="8" rx="4" fill="#4a4333"/>
+  <rect x="500" y="280" width="350" height="110" rx="16" fill="#2b261d" stroke="#ffc4ad" stroke-opacity="0.5"/>
+  <text x="522" y="312" fill="#f0fafa" font-family="Arial, sans-serif" font-size="18" font-weight="700">AI answer</text>
+  <text x="522" y="340" fill="#c9bfa8" font-family="Arial, sans-serif" font-size="15">Request a refund within 14 days</text>
+  <text x="522" y="362" fill="#c9bfa8" font-family="Arial, sans-serif" font-size="15">from your account page.</text>
+</svg>

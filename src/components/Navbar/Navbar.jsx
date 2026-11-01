@@ -1,5 +1,5 @@
-﻿import React, { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
 import { PROFILE } from "../../data/profile";
@@ -7,11 +7,14 @@ import { useTheme } from "../../hooks/useTheme";
 import { IconClose, IconDownload, IconMenu, IconMoon, IconSun } from "../Icons";
 
 const LINKS = [
-  { to: "/", label: "Home", end: true },
-  { to: "/#about", label: "About", end: false },
-  { to: "/skills", label: "Skills", end: true },
-  { to: "/projects", label: "Projects", end: true },
-  { to: "/#contact", label: "Contact", end: false },
+  { to: "/", label: "Home" },
+  { to: { pathname: "/", hash: "#about" }, label: "About" },
+  { to: "/skills", label: "Skills" },
+  { to: "/projects", label: "Projects" },
+  { to: "/full-stack", label: "Full-Stack" },
+  { to: "/ai", label: "AI Agents" },
+  { to: "/process", label: "Process" },
+  { to: { pathname: "/", hash: "#contact" }, label: "Contact" },
 ];
 
 export const Navbar = () => {
@@ -29,7 +32,6 @@ export const Navbar = () => {
 
   useEffect(() => {
     setMenuOpen(false);
-    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -48,8 +50,15 @@ export const Navbar = () => {
 
   const isLight = theme === "light";
 
-  const getLinkClass = ({ isActive }) =>
-    isActive ? `${styles.navLink} ${styles.active}` : styles.navLink;
+  const linkClass = (active) =>
+    active ? `${styles.navLink} ${styles.active}` : styles.navLink;
+
+  const isActive = (to) => {
+    if (typeof to === "string") {
+      return location.pathname === to && (to !== "/" || !location.hash);
+    }
+    return location.pathname === to.pathname && location.hash === to.hash;
+  };
 
   return (
     <header className={`${styles.header} ${scrolled || menuOpen ? styles.scrolled : ""}`}>
@@ -60,27 +69,16 @@ export const Navbar = () => {
         </NavLink>
 
         <ul id="nav-menu" className={`${styles.links} ${menuOpen ? styles.open : ""}`}>
-          {LINKS.map(({ to, label, end }) => (
-            <li key={to}>
-              {to.includes("#") ? (
-                /* Hash links use plain <a> since they're anchor scrolls */
-                <a
-                  href={to}
-                  className={styles.navLink}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {label}
-                </a>
-              ) : (
-                <NavLink
-                  to={to}
-                  end={end}
-                  className={getLinkClass}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {label}
-                </NavLink>
-              )}
+          {LINKS.map(({ to, label }) => (
+            <li key={label}>
+              <Link
+                to={to}
+                className={linkClass(isActive(to))}
+                aria-current={isActive(to) ? "page" : undefined}
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </Link>
             </li>
           ))}
           <li className={styles.mobileCta}>

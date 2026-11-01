@@ -1,0 +1,14 @@
+.more {
+  margin-top: 20px;
+  color: var(--text-muted);
+}
+
+.more a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.more a:hover {
+  color: var(--accent);
+}

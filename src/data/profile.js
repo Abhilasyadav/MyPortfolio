@@ -1,7 +1,7 @@
 // Single source of truth for personal details used across sections.
 export const PROFILE = {
   name: "Abhilash Yadav",
-  role: "AI & Full-Stack Developer",
+  role: "Full-Stack & AI Agent Developer",
   location: "India",
   email: "yadavabhilash2003@gmail.com",
   resume: "/resume.pdf",

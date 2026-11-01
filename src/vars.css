@@ -1,84 +1,77 @@
-﻿/* Design tokens. Dark is the default; light applies via [data-theme="light"]. */
+/* Design tokens. "Paper & ink": warm paper, near-black ink, one vermilion accent.
+   Light is the default; dark applies via [data-theme="dark"]. */
 :root {
-  /* Surfaces — deeper, richer dark for a premium feel */
-  --bg: #030d0e;
-  --bg-elevated: #071214;
-  --surface: #0b1a1c;
-  --surface-hover: #0f2124;
-  --border: rgba(20, 184, 166, 0.10);
-  --border-strong: rgba(20, 184, 166, 0.22);
+  --bg: #f3efe6;
+  --bg-elevated: #ece7db;
+  --surface: #faf8f2;
+  --border: rgba(22, 20, 15, 0.14);
+  --border-strong: rgba(22, 20, 15, 0.7);
 
-  /* Text */
-  --text: #f0fafa;
-  --text-muted: #94a3b0;
-  --text-subtle: #64808a;
+  --text: #16140f;
+  --text-muted: #55503f;
+  --text-subtle: #857f6d;
 
-  /* Accent — teal */
-  --accent: #14b8a6;
-  --accent-hover: #2dd4bf;
-  --accent-soft: rgba(20, 184, 166, 0.12);
-  --accent-glow: rgba(20, 184, 166, 0.40);
-  --on-accent: #030d0e;
+  --accent: #d63a16;
+  --accent-hover: #b92f0f;
+  --accent-soft: rgba(214, 58, 22, 0.1);
+  --on-accent: #fffaf3;
 
-  --success: #22c55e;
-
-  /* Effects */
-  --nav-bg: rgba(3, 13, 14, 0.80);
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 24px 60px -12px rgba(0, 0, 0, 0.75);
-  --grid-line: rgba(20, 184, 166, 0.05);
+  --success: #2f7d4f;
+  --nav-bg: rgba(243, 239, 230, 0.92);
 
   /* Type */
-  --font-display: "Outfit Variable", "Outfit", system-ui, sans-serif;
+  --font-display: "Fraunces Variable", "Fraunces", Georgia, "Times New Roman", serif;
   --font-body: "Inter Variable", "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
 
   /* Layout */
-  --container: 1180px;
-  --gutter: clamp(16px, 4vw, 32px);
+  --container: 1120px;
+  --gutter: clamp(18px, 4vw, 40px);
   --nav-height: 68px;
-  --radius-sm: 8px;
-  --radius: 14px;
-  --radius-lg: 22px;
+  --radius: 4px;
+  --radius-lg: 6px;
 
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 
-  /* Legacy aliases, kept until every section is migrated */
-  --color-primary: var(--accent);
-  --color-primary-light: var(--accent-hover);
-  --color-primary-dark: var(--accent);
-  --color-bg: var(--bg);
-  --color-secondary: var(--surface);
-  --color-dark: var(--bg-elevated);
-  --color-text: var(--text);
-  --color-text-muted: var(--text-muted);
-  --color-accent: var(--accent);
-  --font-roboto: var(--font-body);
-
-  color-scheme: dark;
-}
-
-[data-theme="light"] {
-  --bg: #f0fafa;
-  --bg-elevated: #ffffff;
-  --surface: #ffffff;
-  --surface-hover: #e6f7f7;
-  --border: rgba(15, 80, 80, 0.10);
-  --border-strong: rgba(15, 80, 80, 0.20);
-
-  --text: #0d2626;
-  --text-muted: #3d6060;
-  --text-subtle: #5a8080;
-
-  --accent: #0d9488;
-  --accent-hover: #0f766e;
-  --accent-soft: rgba(13, 148, 136, 0.10);
-  --accent-glow: rgba(13, 148, 136, 0.28);
-  --on-accent: #ffffff;
-
-  --nav-bg: rgba(240, 250, 250, 0.85);
-  --shadow-sm: 0 1px 2px rgba(13, 38, 38, 0.06);
-  --shadow-lg: 0 24px 48px -16px rgba(13, 38, 38, 0.18);
-  --grid-line: rgba(13, 148, 136, 0.06);
+  /* Cards are flat with an ink border; hovering adds a hard offset shadow */
+  --card-shadow-hover: 5px 5px 0 var(--text);
 
   color-scheme: light;
+}
+
+/* Large monitors: let the content column grow instead of floating in empty space */
+@media (min-width: 1600px) {
+  :root {
+    --container: 1280px;
+  }
+}
+
+@media (min-width: 2000px) {
+  :root {
+    --container: 1440px;
+  }
+}
+
+[data-theme="dark"] {
+  --bg: #12110e;
+  --bg-elevated: #191813;
+  --surface: #1c1b16;
+  --border: rgba(241, 237, 228, 0.14);
+  --border-strong: rgba(241, 237, 228, 0.65);
+
+  --text: #f1ede4;
+  --text-muted: #b9b3a3;
+  --text-subtle: #8a8473;
+
+  --accent: #ff7a50;
+  --accent-hover: #ff9370;
+  --accent-soft: rgba(255, 122, 80, 0.12);
+  --on-accent: #1a0d07;
+
+  --success: #5fbf86;
+  --nav-bg: rgba(18, 17, 14, 0.92);
+
+  --card-shadow-hover: 5px 5px 0 var(--accent);
+
+  color-scheme: dark;
 }
