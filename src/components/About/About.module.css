@@ -9,8 +9,15 @@
   max-width: var(--container);
   margin: 0 auto;
   display: grid;
+  gap: 56px;
+}
+
+/* Heading and intro side by side. The heading only sticks inside this row,
+   so it can never slide over the capability columns below. */
+.top {
+  display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 56px clamp(32px, 6vw, 96px);
+  gap: 40px clamp(32px, 6vw, 96px);
   align-items: start;
 }
 
@@ -57,7 +64,6 @@
 
 /* Three capability columns, ruled like a printed spec sheet */
 .caps {
-  grid-column: 1 / -1;
   list-style: none;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -94,7 +100,6 @@
 }
 
 .info {
-  grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   border-top: 1px solid var(--border-strong);
@@ -130,7 +135,7 @@
     padding: 72px var(--gutter);
   }
 
-  .inner {
+  .top {
     grid-template-columns: 1fr;
   }
 

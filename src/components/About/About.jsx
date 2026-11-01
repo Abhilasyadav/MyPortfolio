@@ -40,6 +40,7 @@ const reveal = (delay = 0) => ({
 export const About = () => (
   <section id="about" className={styles.section}>
     <div className={styles.inner}>
+      <div className={styles.top}>
       <motion.header className={styles.head} {...reveal(0)}>
         <p className="eyebrow">01 / About</p>
         <h2 className={styles.heading}>
@@ -73,6 +74,7 @@ export const About = () => (
           </a>
         </div>
       </motion.div>
+      </div>
 
       <ul className={styles.caps}>
         {CAPABILITIES.map((c, i) => (
